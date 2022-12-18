@@ -1,0 +1,50 @@
+<configuration debug="true">
+
+	<property name="FILE_NAME" value="smartuser-api" />
+	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{HH:mm:ss.SSS} {%t} %-5level %logger{36} - %msg%n
+			</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_FILE_PATH}/${FILE_NAME}.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILE_PATH}/${FILE_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n</Pattern>
+			<outputPatternAsHeader>true</outputPatternAsHeader>
+		</encoder>
+	</appender>
+
+	<root name="ROOT" level="WARN" additivity="false">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	<root name="com.smartapps" level="INFO" additivity="false">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	<root name="org.hibernate.SQL" level="DEBUG" additivity="false">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	<root name="org.hibernate" level="INFO" additivity="false">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	<root name="org.hibernate.type" level="INFO" additivity="false">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+	<root name="org.springframework" level="INFO" additivity="false">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+
+</configuration>

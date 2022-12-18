@@ -1,0 +1,1840 @@
+{
+	"info": {
+		"_postman_id": "76cc655c-1c48-44d6-994a-c1324a9ee06b",
+		"name": "smartuser-api",
+		"description": "SmartUser REST API Information",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "smartuser-api/users",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/users/{id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/users/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"testFN-UPD\",\n  \"middleName\": \"testMN-UPD\",\n  \"lastName\": \"testLN-UPD\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-30\",\n  \"phone\": \"0417360023\",\n  \"email\": \"test@emailUPD.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/users/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "in cillum occ"
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "49825580",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "name/{userName}",
+					"item": [
+						{
+							"name": "/users/name/{userName}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/name/:userName",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										"name",
+										":userName"
+									],
+									"variable": [
+										{
+											"key": "userName",
+											"value": "testuser1",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/users/name/{userName}/appid/{appId}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/name/:userName/appid/:appId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										"name",
+										":userName",
+										"appid",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "userName",
+											"value": "in cillum occ",
+											"description": "(Required) "
+										},
+										{
+											"key": "appId",
+											"value": "in cillum occ",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully retrieved.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName/appid/:appId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName",
+												"appid",
+												":appId"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												},
+												{
+													"key": "appId",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Bad request.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName/appid/:appId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName",
+												"appid",
+												":appId"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												},
+												{
+													"key": "appId",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "You are not authorized to access the resource.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName/appid/:appId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName",
+												"appid",
+												":appId"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												},
+												{
+													"key": "appId",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Accessing the resource you were trying to reach is forbidden.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName/appid/:appId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName",
+												"appid",
+												":appId"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												},
+												{
+													"key": "appId",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "The resource you were trying to reach is not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/smartuser-api/users/name/:userName/appid/:appId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"smartuser-api",
+												"users",
+												"name",
+												":userName",
+												"appid",
+												":appId"
+											],
+											"variable": [
+												{
+													"key": "userName",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												},
+												{
+													"key": "appId",
+													"value": "in cillum occ",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/smartuser-api/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"smartuser-api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "You are not authorized to access the resource.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Accessing the resource you were trying to reach is forbidden.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "The resource you were trying to reach is not found.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"testuser1\",\n  \"password\": \"testpwd1\",\n  \"roles\": \"ADMIN\",\n  \"firstName\": \"testFN\",\n  \"middleName\": \"testMN\",\n  \"lastName\": \"testLN\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-26\",\n  \"phone\": \"0417364793\",\n  \"email\": \"test@email.com\",\n  \"procApprId\": \"TEST_APP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/smartuser-api/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"smartuser-api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "You are not authorized to access the resource.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Accessing the resource you were trying to reach is forbidden.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "The resource you were trying to reach is not found.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -67513908,\n  \"name\": \"nulla nostrud Lorem est ipsum\",\n  \"password\": \"ad\",\n  \"roles\": \"ex ipsum ut\",\n  \"firstName\": \"consequat dolore\",\n  \"middleName\": \"dolor\",\n  \"lastName\": \"proident amet dolor nostrud\",\n  \"gender\": \"ea sint elit aliqua\",\n  \"dob\": \"in \",\n  \"phone\": \"do est in ea comm\",\n  \"email\": \"velit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/users/appid/{appId}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/smartuser-api/users/appid/:appId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"smartuser-api",
+								"users",
+								"appid",
+								":appId"
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": "in cillum occ",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/appid/:appId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										"appid",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "in cillum occ",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/appid/:appId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										"appid",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "in cillum occ",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "You are not authorized to access the resource.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/appid/:appId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										"appid",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "in cillum occ",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Accessing the resource you were trying to reach is forbidden.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/appid/:appId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										"appid",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "in cillum occ",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "The resource you were trying to reach is not found.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users/appid/:appId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users",
+										"appid",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "in cillum occ",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

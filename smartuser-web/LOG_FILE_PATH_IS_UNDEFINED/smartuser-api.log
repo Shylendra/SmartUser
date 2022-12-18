@@ -1,0 +1,333 @@
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+2022-12-19 10:17:01.473 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-12-19 10:17:01.520 [main] INFO  c.s.smartuser.web.SmartuserApplication - Starting SmartuserApplication using Java 1.8.0_291 on DESKTOP-1C84R2R with PID 53100 (C:\Users\shyle\git\SmartUser\smartuser-web\target\classes started by shyle in C:\Users\shyle\git\SmartUser\smartuser-web)
+2022-12-19 10:17:01.520 [main] INFO  c.s.smartuser.web.SmartuserApplication - No active profile set, falling back to default profiles: default
+2022-12-19 10:17:04.316 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 10:17:04.415 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interfaces.
+2022-12-19 10:17:08.581 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-12-19 10:17:08.613 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-19 10:17:08.614 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 10:17:08.614 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-12-19 10:17:09.467 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 10:17:09.467 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7743 ms
+2022-12-19 10:17:11.538 [main] INFO  o.e.s.o.t.o.p.UpfrontAllocatingPageSource - Allocating 100.0MB in chunks
+2022-12-19 10:17:11.613 [main] INFO  org.ehcache.core.EhcacheManager - Cache 'thirty-minute-cache' created in EhcacheManager.
+2022-12-19 10:17:11.754 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2022-12-19 10:17:11.754 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2022-12-19 10:17:11.896 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-12-19 10:17:13.943 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-12-19 10:17:15.599 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 10:17:15.746 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-12-19 10:17:16.232 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 10:17:16.577 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-12-19 10:17:18.325 [main] DEBUG org.hibernate.SQL - create table smart_user (id integer not null auto_increment, proc_app_id varchar(255), proc_ts datetime, proc_user_id varchar(255), proc_user_ip_address varchar(255), proc_user_latitude varchar(255), proc_user_longitude varchar(255), vers_id smallint, dob date, email varchar(255), first_name varchar(255), gender varchar(255), last_name varchar(255), middle_name varchar(255), name varchar(255), password varchar(255), phone varchar(255), roles varchar(255), primary key (id)) engine=MyISAM
+2022-12-19 10:17:18.907 [main] INFO  o.h.e.t.j.p.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 10:17:18.923 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 10:17:18.970 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - Load MainConfig ***
+2022-12-19 10:17:18.970 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - JNDI: null
+2022-12-19 10:17:23.582 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-12-19 10:17:23.981 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-12-19 10:17:24.075 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-19 10:17:24.107 [main] INFO  c.s.smartuser.web.SmartuserApplication - Started SmartuserApplication in 24.173 seconds (JVM running for 27.325)
+2022-12-19 10:18:00.844 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 10:18:00.845 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 10:18:00.847 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-12-19 10:18:03.484 [http-nio-8080-exec-7] INFO  org.springdoc.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 861 ms
+2022-12-19 10:28:45.679 [http-nio-8080-exec-5] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveByUserName() ***]:
+2022-12-19 10:28:45.680 [http-nio-8080-exec-5] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readByUserName() ***]:
+2022-12-19 10:28:46.213 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.dob as dob9_0_, smartuser0_.email as email10_0_, smartuser0_.first_name as first_n11_0_, smartuser0_.gender as gender12_0_, smartuser0_.last_name as last_na13_0_, smartuser0_.middle_name as middle_14_0_, smartuser0_.name as name15_0_, smartuser0_.password as passwor16_0_, smartuser0_.phone as phone17_0_, smartuser0_.roles as roles18_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2022-12-19 10:28:46.226 [http-nio-8080-exec-5] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [in cillum occ]
+2022-12-19 10:28:46.341 [http-nio-8080-exec-5] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveByUserName() RESPONSE ***]: 
+ [ ]
+2022-12-19 10:30:54.891 [http-nio-8080-exec-7] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::register() REQUEST ***]: 
+ {
+  "id" : 0,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+}
+2022-12-19 10:30:55.029 [http-nio-8080-exec-7] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::create() ***]:
+2022-12-19 10:30:55.152 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - insert into smart_user (proc_app_id, proc_ts, proc_user_id, proc_user_ip_address, proc_user_latitude, proc_user_longitude, vers_id, dob, email, first_name, gender, last_name, middle_name, name, password, phone, roles) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2022-12-19 10:30:55.154 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - []
+2022-12-19 10:30:55.156 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [2022-12-19 10:30:55.001]
+2022-12-19 10:30:55.161 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - []
+2022-12-19 10:30:55.162 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - []
+2022-12-19 10:30:55.162 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [VARCHAR] - []
+2022-12-19 10:30:55.162 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - []
+2022-12-19 10:30:55.164 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [0]
+2022-12-19 10:30:55.165 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [8] as [DATE] - [2022-02-26]
+2022-12-19 10:30:55.166 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [9] as [VARCHAR] - [test@email.com]
+2022-12-19 10:30:55.166 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [10] as [VARCHAR] - [testFN]
+2022-12-19 10:30:55.166 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [11] as [VARCHAR] - [MALE]
+2022-12-19 10:30:55.166 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [12] as [VARCHAR] - [testLN]
+2022-12-19 10:30:55.166 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [13] as [VARCHAR] - [testMN]
+2022-12-19 10:30:55.166 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [14] as [VARCHAR] - [testuser1]
+2022-12-19 10:30:55.167 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [15] as [VARCHAR] - [testpwd1]
+2022-12-19 10:30:55.167 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [16] as [VARCHAR] - [0417364793]
+2022-12-19 10:30:55.167 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [17] as [VARCHAR] - [ADMIN]
+2022-12-19 10:30:55.212 [http-nio-8080-exec-7] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::register() RESPONSE ***]: 
+ {
+  "id" : 1,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+}
+2022-12-19 10:31:12.365 [http-nio-8080-exec-8] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveByUserName() ***]:
+2022-12-19 10:31:12.365 [http-nio-8080-exec-8] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readByUserName() ***]:
+2022-12-19 10:31:12.366 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.dob as dob9_0_, smartuser0_.email as email10_0_, smartuser0_.first_name as first_n11_0_, smartuser0_.gender as gender12_0_, smartuser0_.last_name as last_na13_0_, smartuser0_.middle_name as middle_14_0_, smartuser0_.name as name15_0_, smartuser0_.password as passwor16_0_, smartuser0_.phone as phone17_0_, smartuser0_.roles as roles18_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2022-12-19 10:31:12.367 [http-nio-8080-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testuser1]
+2022-12-19 10:31:12.398 [http-nio-8080-exec-8] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveByUserName() RESPONSE ***]: 
+ [ {
+  "id" : 1,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+} ]
+2022-12-19 10:31:48.662 [http-nio-8080-exec-9] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveAll() ***]:
+2022-12-19 10:31:48.663 [http-nio-8080-exec-9] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readAll() ***]:
+2022-12-19 10:31:48.670 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.dob as dob9_0_, smartuser0_.email as email10_0_, smartuser0_.first_name as first_n11_0_, smartuser0_.gender as gender12_0_, smartuser0_.last_name as last_na13_0_, smartuser0_.middle_name as middle_14_0_, smartuser0_.name as name15_0_, smartuser0_.password as passwor16_0_, smartuser0_.phone as phone17_0_, smartuser0_.roles as roles18_0_ from smart_user smartuser0_
+2022-12-19 10:31:48.677 [http-nio-8080-exec-9] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveAll() RESPONSE ***]: 
+ [ {
+  "id" : 1,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+} ]
+2022-12-19 10:32:24.474 [http-nio-8080-exec-10] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveById() ***]:
+2022-12-19 10:32:24.476 [http-nio-8080-exec-10] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readById() ***]:
+2022-12-19 10:32:24.490 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_0_, smartuser0_.proc_app_id as proc_app2_0_0_, smartuser0_.proc_ts as proc_ts3_0_0_, smartuser0_.proc_user_id as proc_use4_0_0_, smartuser0_.proc_user_ip_address as proc_use5_0_0_, smartuser0_.proc_user_latitude as proc_use6_0_0_, smartuser0_.proc_user_longitude as proc_use7_0_0_, smartuser0_.vers_id as vers_id8_0_0_, smartuser0_.dob as dob9_0_0_, smartuser0_.email as email10_0_0_, smartuser0_.first_name as first_n11_0_0_, smartuser0_.gender as gender12_0_0_, smartuser0_.last_name as last_na13_0_0_, smartuser0_.middle_name as middle_14_0_0_, smartuser0_.name as name15_0_0_, smartuser0_.password as passwor16_0_0_, smartuser0_.phone as phone17_0_0_, smartuser0_.roles as roles18_0_0_ from smart_user smartuser0_ where smartuser0_.id=?
+2022-12-19 10:32:24.492 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2022-12-19 10:32:24.510 [http-nio-8080-exec-10] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveById() RESPONSE ***]: 
+ {
+  "id" : 1,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+}
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+2022-12-19 10:36:09.462 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-12-19 10:36:09.466 [main] INFO  c.s.smartuser.web.SmartuserApplication - Starting SmartuserApplication using Java 1.8.0_291 on DESKTOP-1C84R2R with PID 5152 (C:\Users\shyle\git\SmartUser\smartuser-web\target\classes started by shyle in C:\Users\shyle\git\SmartUser\smartuser-web)
+2022-12-19 10:36:09.466 [main] INFO  c.s.smartuser.web.SmartuserApplication - No active profile set, falling back to default profiles: default
+2022-12-19 10:36:10.800 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 10:36:10.861 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interfaces.
+2022-12-19 10:36:13.027 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-12-19 10:36:13.035 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-12-19 10:36:13.035 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-19 10:36:13.035 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-12-19 10:36:14.055 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-19 10:36:14.055 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4511 ms
+2022-12-19 10:36:15.613 [main] INFO  o.e.s.o.t.o.p.UpfrontAllocatingPageSource - Allocating 100.0MB in chunks
+2022-12-19 10:36:15.673 [main] INFO  org.ehcache.core.EhcacheManager - Cache 'thirty-minute-cache' created in EhcacheManager.
+2022-12-19 10:36:15.743 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2022-12-19 10:36:15.749 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2022-12-19 10:36:15.839 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-12-19 10:36:16.975 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-12-19 10:36:17.295 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 10:36:17.389 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-12-19 10:36:17.677 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 10:36:17.877 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-12-19 10:36:18.998 [main] INFO  o.h.e.t.j.p.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 10:36:19.008 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 10:36:19.039 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - Load MainConfig ***
+2022-12-19 10:36:19.039 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - JNDI: null
+2022-12-19 10:36:22.909 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-12-19 10:36:23.186 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-12-19 10:36:23.217 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-19 10:36:23.233 [main] INFO  c.s.smartuser.web.SmartuserApplication - Started SmartuserApplication in 14.438 seconds (JVM running for 16.224)
+2022-12-19 10:37:25.203 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 10:37:25.203 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-19 10:37:25.205 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2022-12-19 10:37:25.365 [http-nio-8080-exec-2] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveAll() ***]:
+2022-12-19 10:37:25.368 [http-nio-8080-exec-2] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readAll() ***]:
+2022-12-19 10:37:25.659 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.dob as dob9_0_, smartuser0_.email as email10_0_, smartuser0_.first_name as first_n11_0_, smartuser0_.gender as gender12_0_, smartuser0_.last_name as last_na13_0_, smartuser0_.middle_name as middle_14_0_, smartuser0_.name as name15_0_, smartuser0_.password as passwor16_0_, smartuser0_.phone as phone17_0_, smartuser0_.roles as roles18_0_ from smart_user smartuser0_
+2022-12-19 10:37:25.899 [http-nio-8080-exec-2] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveAll() RESPONSE ***]: 
+ [ {
+  "id" : 1,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+} ]
+2022-12-19 10:37:30.513 [http-nio-8080-exec-3] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::register() REQUEST ***]: 
+ {
+  "id" : 0,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+}
+2022-12-19 10:37:30.534 [http-nio-8080-exec-3] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::create() ***]:
+2022-12-19 10:37:30.573 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into smart_user (proc_app_id, proc_ts, proc_user_id, proc_user_ip_address, proc_user_latitude, proc_user_longitude, vers_id, dob, email, first_name, gender, last_name, middle_name, name, password, phone, roles) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2022-12-19 10:37:30.580 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - []
+2022-12-19 10:37:30.582 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [2022-12-19 10:37:30.522]
+2022-12-19 10:37:30.587 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - []
+2022-12-19 10:37:30.587 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - []
+2022-12-19 10:37:30.587 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [VARCHAR] - []
+2022-12-19 10:37:30.587 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - []
+2022-12-19 10:37:30.589 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [0]
+2022-12-19 10:37:30.591 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [8] as [DATE] - [2022-02-26]
+2022-12-19 10:37:30.591 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [9] as [VARCHAR] - [test@email.com]
+2022-12-19 10:37:30.591 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [10] as [VARCHAR] - [testFN]
+2022-12-19 10:37:30.591 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [11] as [VARCHAR] - [MALE]
+2022-12-19 10:37:30.592 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [12] as [VARCHAR] - [testLN]
+2022-12-19 10:37:30.592 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [13] as [VARCHAR] - [testMN]
+2022-12-19 10:37:30.592 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [14] as [VARCHAR] - [testuser1]
+2022-12-19 10:37:30.592 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [15] as [VARCHAR] - [testpwd1]
+2022-12-19 10:37:30.592 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [16] as [VARCHAR] - [0417364793]
+2022-12-19 10:37:30.593 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [17] as [VARCHAR] - [ADMIN]
+2022-12-19 10:37:31.224 [http-nio-8080-exec-3] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::register() RESPONSE ***]: 
+ {
+  "id" : 2,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+}
+2022-12-19 10:38:56.158 [http-nio-8080-exec-6] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::deleteById() ***]:
+2022-12-19 10:38:56.159 [http-nio-8080-exec-6] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::deleteById() ***]:
+2022-12-19 10:38:56.161 [http-nio-8080-exec-6] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readById() ***]:
+2022-12-19 10:38:56.169 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_0_, smartuser0_.proc_app_id as proc_app2_0_0_, smartuser0_.proc_ts as proc_ts3_0_0_, smartuser0_.proc_user_id as proc_use4_0_0_, smartuser0_.proc_user_ip_address as proc_use5_0_0_, smartuser0_.proc_user_latitude as proc_use6_0_0_, smartuser0_.proc_user_longitude as proc_use7_0_0_, smartuser0_.vers_id as vers_id8_0_0_, smartuser0_.dob as dob9_0_0_, smartuser0_.email as email10_0_0_, smartuser0_.first_name as first_n11_0_0_, smartuser0_.gender as gender12_0_0_, smartuser0_.last_name as last_na13_0_0_, smartuser0_.middle_name as middle_14_0_0_, smartuser0_.name as name15_0_0_, smartuser0_.password as passwor16_0_0_, smartuser0_.phone as phone17_0_0_, smartuser0_.roles as roles18_0_0_ from smart_user smartuser0_ where smartuser0_.id=?
+2022-12-19 10:38:56.171 [http-nio-8080-exec-6] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2022-12-19 10:38:56.199 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - delete from smart_user where id=? and vers_id=?
+2022-12-19 10:38:56.199 [http-nio-8080-exec-6] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2022-12-19 10:38:56.200 [http-nio-8080-exec-6] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [0]
+2022-12-19 10:39:09.366 [http-nio-8080-exec-7] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveById() ***]:
+2022-12-19 10:39:09.366 [http-nio-8080-exec-7] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readById() ***]:
+2022-12-19 10:39:09.370 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_0_, smartuser0_.proc_app_id as proc_app2_0_0_, smartuser0_.proc_ts as proc_ts3_0_0_, smartuser0_.proc_user_id as proc_use4_0_0_, smartuser0_.proc_user_ip_address as proc_use5_0_0_, smartuser0_.proc_user_latitude as proc_use6_0_0_, smartuser0_.proc_user_longitude as proc_use7_0_0_, smartuser0_.vers_id as vers_id8_0_0_, smartuser0_.dob as dob9_0_0_, smartuser0_.email as email10_0_0_, smartuser0_.first_name as first_n11_0_0_, smartuser0_.gender as gender12_0_0_, smartuser0_.last_name as last_na13_0_0_, smartuser0_.middle_name as middle_14_0_0_, smartuser0_.name as name15_0_0_, smartuser0_.password as passwor16_0_0_, smartuser0_.phone as phone17_0_0_, smartuser0_.roles as roles18_0_0_ from smart_user smartuser0_ where smartuser0_.id=?
+2022-12-19 10:39:09.370 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [2]
+2022-12-19 10:39:09.371 [http-nio-8080-exec-7] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveById() RESPONSE ***]: 
+ {
+  "id" : 2,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com"
+}
+2022-12-19 10:40:21.993 [http-nio-8080-exec-10] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::update() REQUEST ***]: 
+ {
+  "id" : 2,
+  "firstName" : "testFN-UPD",
+  "middleName" : "testMN-UPD",
+  "lastName" : "testLN-UPD",
+  "gender" : "MALE",
+  "dob" : "2022-02-30",
+  "phone" : "0417360023",
+  "email" : "test@emailUPD.com"
+}
+2022-12-19 10:40:22.003 [http-nio-8080-exec-10] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::update() ***]:
+2022-12-19 10:40:22.003 [http-nio-8080-exec-10] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readById() ***]:
+2022-12-19 10:40:22.004 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_0_, smartuser0_.proc_app_id as proc_app2_0_0_, smartuser0_.proc_ts as proc_ts3_0_0_, smartuser0_.proc_user_id as proc_use4_0_0_, smartuser0_.proc_user_ip_address as proc_use5_0_0_, smartuser0_.proc_user_latitude as proc_use6_0_0_, smartuser0_.proc_user_longitude as proc_use7_0_0_, smartuser0_.vers_id as vers_id8_0_0_, smartuser0_.dob as dob9_0_0_, smartuser0_.email as email10_0_0_, smartuser0_.first_name as first_n11_0_0_, smartuser0_.gender as gender12_0_0_, smartuser0_.last_name as last_na13_0_0_, smartuser0_.middle_name as middle_14_0_0_, smartuser0_.name as name15_0_0_, smartuser0_.password as passwor16_0_0_, smartuser0_.phone as phone17_0_0_, smartuser0_.roles as roles18_0_0_ from smart_user smartuser0_ where smartuser0_.id=?
+2022-12-19 10:40:22.004 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [2]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::update() RESPONSE ***]: 
+ {
+  "id" : 2,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN-UPD",
+  "middleName" : "testMN-UPD",
+  "lastName" : "testLN-UPD",
+  "gender" : "MALE",
+  "dob" : "2022-03-02",
+  "phone" : "0417360023",
+  "email" : "test@emailUPD.com"
+}
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - update smart_user set proc_app_id=?, proc_ts=?, proc_user_id=?, proc_user_ip_address=?, proc_user_latitude=?, proc_user_longitude=?, vers_id=?, dob=?, email=?, first_name=?, gender=?, last_name=?, middle_name=?, name=?, password=?, phone=?, roles=? where id=? and vers_id=?
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - []
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [2022-12-19 10:37:31.0]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - []
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - []
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [VARCHAR] - []
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - []
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [1]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [8] as [DATE] - [2022-03-02]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [9] as [VARCHAR] - [test@emailUPD.com]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [10] as [VARCHAR] - [testFN-UPD]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [11] as [VARCHAR] - [MALE]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [12] as [VARCHAR] - [testLN-UPD]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [13] as [VARCHAR] - [testMN-UPD]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [14] as [VARCHAR] - [testuser1]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [15] as [VARCHAR] - [testpwd1]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [16] as [VARCHAR] - [0417360023]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [17] as [VARCHAR] - [ADMIN]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [18] as [INTEGER] - [2]
+2022-12-19 10:40:22.016 [http-nio-8080-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [19] as [BIGINT] - [0]
+2022-12-19 10:41:31.191 [http-nio-8080-exec-3] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveById() ***]:
+2022-12-19 10:41:31.192 [http-nio-8080-exec-3] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTADDRESS-API::SmartUserServiceImpl::readById() ***]:
+2022-12-19 10:41:31.192 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_0_, smartuser0_.proc_app_id as proc_app2_0_0_, smartuser0_.proc_ts as proc_ts3_0_0_, smartuser0_.proc_user_id as proc_use4_0_0_, smartuser0_.proc_user_ip_address as proc_use5_0_0_, smartuser0_.proc_user_latitude as proc_use6_0_0_, smartuser0_.proc_user_longitude as proc_use7_0_0_, smartuser0_.vers_id as vers_id8_0_0_, smartuser0_.dob as dob9_0_0_, smartuser0_.email as email10_0_0_, smartuser0_.first_name as first_n11_0_0_, smartuser0_.gender as gender12_0_0_, smartuser0_.last_name as last_na13_0_0_, smartuser0_.middle_name as middle_14_0_0_, smartuser0_.name as name15_0_0_, smartuser0_.password as passwor16_0_0_, smartuser0_.phone as phone17_0_0_, smartuser0_.roles as roles18_0_0_ from smart_user smartuser0_ where smartuser0_.id=?
+2022-12-19 10:41:31.193 [http-nio-8080-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [2]
+2022-12-19 10:41:31.208 [http-nio-8080-exec-3] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::retrieveById() RESPONSE ***]: 
+ {
+  "id" : 2,
+  "name" : "testuser1",
+  "password" : "testpwd1",
+  "roles" : "ADMIN",
+  "firstName" : "testFN-UPD",
+  "middleName" : "testMN-UPD",
+  "lastName" : "testLN-UPD",
+  "gender" : "MALE",
+  "dob" : "2022-03-02",
+  "phone" : "0417360023",
+  "email" : "test@emailUPD.com"
+}
