@@ -74,5 +74,12 @@ public class SmartUser extends CommonEntity implements Serializable {
 	@Column(name = "EMAIL")
 	@Convert(converter = TrimConverter.class)
 	private String email;
+	
+	@Column(name = "PROFILE_PHOTO_PATH")
+	@Convert(converter = TrimConverter.class)
+	private String profilePhotoPath;
+	
+	@Column(name = "ACTIVE")
+	private Boolean active;
 
 }

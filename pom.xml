@@ -27,10 +27,10 @@
 
   <modules>  
     <module>smartuser-bom</module>
-    <module>smartuser-web</module>
-    <module>smartuser-jpa</module>
     <module>smartuser-shared</module>
     <module>smartuser-security</module>
+    <module>smartuser-jpa</module>
+    <module>smartuser-web</module>
   </modules>
 
 	<scm>

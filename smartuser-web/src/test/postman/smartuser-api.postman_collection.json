@@ -7,35 +7,61 @@
 	},
 	"item": [
 		{
-			"name": "smartuser-api/users",
+			"name": "smartuser-api/api/users",
 			"item": [
 				{
 					"name": "{id}",
 					"item": [
 						{
-							"name": "/users/{id}",
+							"name": "/api/users/{id}",
 							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "testpwd1",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "testadmin",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
 										"value": "*/*"
+									},
+									{
+										"key": "APP_ID",
+										"value": "TEST_APP1",
+										"type": "text"
+									},
+									{
+										"key": "USER_ID",
+										"value": "testUser",
+										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/smartuser-api/users/:id",
+									"raw": "{{baseUrl}}/smartuser-api/api/users/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartuser-api",
+										"api",
 										"users",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
-											"value": "2",
+											"value": "5",
 											"description": "(Required) "
 										}
 									]
@@ -225,8 +251,11 @@
 							]
 						},
 						{
-							"name": "/users/{id}",
+							"name": "/api/users/{id}",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "PUT",
 								"header": [
 									{
@@ -236,11 +265,26 @@
 									{
 										"key": "Accept",
 										"value": "*/*"
+									},
+									{
+										"key": "APP_ID",
+										"value": "TEST_APP1",
+										"type": "text"
+									},
+									{
+										"key": "USER_ID",
+										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"testFN-UPD\",\n  \"middleName\": \"testMN-UPD\",\n  \"lastName\": \"testLN-UPD\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-30\",\n  \"phone\": \"0417360023\",\n  \"email\": \"test@emailUPD.com\"\n}",
+									"raw": "{\n  \"name\": \"testuser1\",\n  \"firstName\": \"testFN-UPD\",\n  \"middleName\": \"testMN-UPD\",\n  \"lastName\": \"testLN-UPD\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-30\",\n  \"phone\": \"0417360023\",\n  \"email\": \"test@emailUPD.com\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -248,19 +292,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/smartuser-api/users/:id",
+									"raw": "{{baseUrl}}/smartuser-api/api/users/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartuser-api",
+										"api",
 										"users",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
-											"value": "2",
+											"value": "5",
 											"description": "(Required) "
 										}
 									]
@@ -495,22 +540,41 @@
 							]
 						},
 						{
-							"name": "/users/{id}",
+							"name": "/api/users/{id}",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "Accept",
 										"value": "*/*"
+									},
+									{
+										"key": "APP_ID",
+										"value": "TEST_APP1",
+										"type": "text"
+									},
+									{
+										"key": "USER_ID",
+										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/smartuser-api/users/:id",
+									"raw": "{{baseUrl}}/smartuser-api/api/users/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartuser-api",
+										"api",
 										"users",
 										":id"
 									],
@@ -640,22 +704,41 @@
 					"name": "name/{userName}",
 					"item": [
 						{
-							"name": "/users/name/{userName}",
+							"name": "/api/users/name/{userName}",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
 										"value": "*/*"
+									},
+									{
+										"key": "APP_ID",
+										"value": "TEST_APP1",
+										"type": "text"
+									},
+									{
+										"key": "USER_ID",
+										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/smartuser-api/users/name/:userName",
+									"raw": "{{baseUrl}}/smartuser-api/api/users/name/:userName",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartuser-api",
+										"api",
 										"users",
 										"name",
 										":userName"
@@ -663,7 +746,7 @@
 									"variable": [
 										{
 											"key": "userName",
-											"value": "testuser1",
+											"value": "testadmin",
 											"description": "(Required) "
 										}
 									]
@@ -858,36 +941,46 @@
 							]
 						},
 						{
-							"name": "/users/name/{userName}/appid/{appId}",
+							"name": "/api/users/name/{userName}/appid",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
 										"value": "*/*"
+									},
+									{
+										"key": "APP_ID",
+										"value": "TEST_APP1",
+										"type": "text"
+									},
+									{
+										"key": "USER_ID",
+										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/smartuser-api/users/name/:userName/appid/:appId",
+									"raw": "{{baseUrl}}/smartuser-api/api/users/name/:userName/appid",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"smartuser-api",
+										"api",
 										"users",
 										"name",
 										":userName",
-										"appid",
-										":appId"
+										"appid"
 									],
 									"variable": [
 										{
 											"key": "userName",
-											"value": "in cillum occ",
-											"description": "(Required) "
-										},
-										{
-											"key": "appId",
 											"value": "in cillum occ",
 											"description": "(Required) "
 										}
@@ -1120,22 +1213,41 @@
 					]
 				},
 				{
-					"name": "/users",
+					"name": "/api/users",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "*/*"
+							},
+							{
+								"key": "APP_ID",
+								"value": "TEST_APP1",
+								"type": "text"
+							},
+							{
+								"key": "USER_ID",
+								"value": "testUser",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiZXhwIjoxNjcxNjA2MzUzLCJpYXQiOjE2NzE1ODgzNTN9.L5bQhGueOUQGHDaJvpeQPU6Pqxmy73dlnKOkVR7PtFLN0si0h32hE2TxWprSMXY9OQPO-2CE0xQdoZaunSd_9w",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/smartuser-api/users",
+							"raw": "{{baseUrl}}/smartuser-api/api/users",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartuser-api",
+								"api",
 								"users"
 							]
 						}
@@ -1284,8 +1396,11 @@
 					]
 				},
 				{
-					"name": "/users",
+					"name": "/api/users",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -1295,11 +1410,26 @@
 							{
 								"key": "Accept",
 								"value": "*/*"
+							},
+							{
+								"key": "APP_ID",
+								"value": "TEST_APP1",
+								"type": "text"
+							},
+							{
+								"key": "USER_ID",
+								"value": "testUser",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiZXhwIjoxNjcxNjA2MzUzLCJpYXQiOjE2NzE1ODgzNTN9.L5bQhGueOUQGHDaJvpeQPU6Pqxmy73dlnKOkVR7PtFLN0si0h32hE2TxWprSMXY9OQPO-2CE0xQdoZaunSd_9w",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"testuser1\",\n  \"password\": \"testpwd1\",\n  \"roles\": \"ADMIN\",\n  \"firstName\": \"testFN\",\n  \"middleName\": \"testMN\",\n  \"lastName\": \"testLN\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-26\",\n  \"phone\": \"0417364793\",\n  \"email\": \"test@email.com\",\n  \"procApprId\": \"TEST_APP\"\n}",
+							"raw": "{\n  \"name\": \"testuser1\",\n  \"password\": \"testpwd1\",\n  \"roles\": \"ADMIN\",\n  \"firstName\": \"testFN\",\n  \"middleName\": \"testMN\",\n  \"lastName\": \"testLN\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-26\",\n  \"phone\": \"0417364793\",\n  \"email\": \"test@email.com\",\n  \"profilePhotoPath\": \"testpath/one/two/test.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1307,12 +1437,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/smartuser-api/users",
+							"raw": "{{baseUrl}}/smartuser-api/api/users",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartuser-api",
+								"api",
 								"users"
 							]
 						}
@@ -1506,32 +1637,40 @@
 					]
 				},
 				{
-					"name": "/users/appid/{appId}",
+					"name": "/api/users/appid",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "*/*"
+							},
+							{
+								"key": "APP_ID",
+								"value": "TEST_APP1",
+								"type": "text"
+							},
+							{
+								"key": "USER_ID",
+								"value": "testUser",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/smartuser-api/users/appid/:appId",
+							"raw": "{{baseUrl}}/smartuser-api/api/users/appid",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartuser-api",
+								"api",
 								"users",
-								"appid",
-								":appId"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "in cillum occ",
-									"description": "(Required) "
-								}
+								"appid"
 							]
 						}
 					},
@@ -1726,22 +1865,32 @@
 			]
 		},
 		{
-			"name": "/",
+			"name": "/authenticate/token",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Accept",
 						"value": "*/*"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"testuser12\",\r\n  \"password\": \"testpwd1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{baseUrl}}/",
+					"raw": "{{baseUrl}}/authenticate/token",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						""
+						"authenticate",
+						"token"
 					]
 				}
 			},

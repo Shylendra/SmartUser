@@ -1,4 +1,4 @@
-package com.smartapps.smartuser.web.security.facade;
+package com.smartapps.smartuser.web.service.facade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,42 +30,27 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						obj}));
 
-		SmartUser entityObj = SmartLibraryUtil.map(obj, SmartUser.class);
-		
-		if(StringUtils.isNotEmpty(obj.getFirstName())) {
-			entityObj.setFirstName(obj.getFirstName());
+		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcApprId());
+		if(entityObj == null) {
+			SmartUser reqEntityObj = smartUserAssembler.mapToEntity(obj);
+			SmartUser resEntityObj = smartUserService.create(reqEntityObj).get();
+			SmartUserDto resObj = smartUserAssembler.mapToDto(resEntityObj);
+			log.info(messageService.getMessage(
+					SharedMessages.LOG003_RESPONSE, 
+					new Object[]{
+							this.getClass().getSimpleName(), 
+							new Object(){}.getClass().getEnclosingMethod().getName(),
+							resObj}));
+			return resObj;
 		}
-		if(StringUtils.isNotEmpty(obj.getMiddleName())) {
-			entityObj.setMiddleName(obj.getMiddleName());
-		}
-		if(StringUtils.isNotEmpty(obj.getLastName())) {
-			entityObj.setLastName(obj.getLastName());
-		}
-		if(StringUtils.isNotEmpty(obj.getGender())) {
-			entityObj.setGender(obj.getGender());
-		}
-		if(obj.getDob() != null) {
-			entityObj.setDob(obj.getSqlDob());
-		}
-		if(StringUtils.isNotEmpty(obj.getPhone())) {
-			entityObj.setPhone(obj.getPhone());
-		}
-		if(StringUtils.isNotEmpty(obj.getEmail())) {
-			entityObj.setEmail(obj.getEmail());
-		}
-		if(StringUtils.isNotEmpty(obj.getProcTs())) {
-			entityObj.setProcTs(obj.getSqlProcTs());
-		}
-		SmartUserDto response = SmartLibraryUtil.map(smartUserService.create(entityObj).get(), SmartUserDto.class);
 		
 		log.info(messageService.getMessage(
 				SharedMessages.LOG003_RESPONSE, 
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName(),
-						response}));
-
-		return response;
+						"User '" + obj.getName() + "' with App ID '" +obj.getProcApprId() + "'already exists! "}));
+		return null;
 	}
 
 	@Override
@@ -112,49 +97,50 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 	}
 
 	@Override
-	public List<SmartUserDto> retrieveByUserName(String userName) throws JsonProcessingException {
+	public SmartUserDto retrieveByUserName(String userName) throws JsonProcessingException {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
-		List<SmartUserDto> objList = new ArrayList<>();
-		List<SmartUser> entityObjList = smartUserService.readByUserName(userName);
-		for(SmartUser entityObj: entityObjList) {
-			objList.add(SmartLibraryUtil.map(entityObj, SmartUserDto.class));
+		SmartUser entityObj = smartUserService.readByUserName(userName);
+		if(entityObj != null) {
+			//obj = SmartLibraryUtil.map(entityObj, SmartUserDto.class);
+			SmartUserDto obj = smartUserAssembler.mapToDto(entityObj);
+			log.info(messageService.getMessage(
+					SharedMessages.LOG003_RESPONSE, 
+					new Object[]{
+							this.getClass().getSimpleName(), 
+							new Object(){}.getClass().getEnclosingMethod().getName(),
+							SmartLibraryUtil.mapToString(obj, true)}));
+			return obj;
 		}
 		
-		log.info(messageService.getMessage(
-				SharedMessages.LOG003_RESPONSE, 
-				new Object[]{
-						this.getClass().getSimpleName(), 
-						new Object(){}.getClass().getEnclosingMethod().getName(),
-						SmartLibraryUtil.mapToString(objList, true)}));
-		return objList;
+		return null;
 	}
 
 	@Override
-	public List<SmartUserDto> retrieveByUserNameAndAppId(String userName, String appId) throws JsonProcessingException {
+	public SmartUserDto retrieveByUserNameAndAppId(String userName, String appId) throws JsonProcessingException {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
-		List<SmartUserDto> objList = new ArrayList<>();
-		List<SmartUser> entityObjList = smartUserService.readByUserNameAndAppId(userName, appId);
-		for(SmartUser entityObj: entityObjList) {
-			objList.add(SmartLibraryUtil.map(entityObj, SmartUserDto.class));
+		SmartUserDto obj = null;
+		SmartUser entityObj = smartUserService.readByUserNameAndAppId(userName, appId);
+		if(entityObj != null) {
+			obj = SmartLibraryUtil.map(entityObj, SmartUserDto.class);
+			log.info(messageService.getMessage(
+					SharedMessages.LOG003_RESPONSE, 
+					new Object[]{
+							this.getClass().getSimpleName(), 
+							new Object(){}.getClass().getEnclosingMethod().getName(),
+							SmartLibraryUtil.mapToString(obj, true)}));
 		}
 		
-		log.info(messageService.getMessage(
-				SharedMessages.LOG003_RESPONSE, 
-				new Object[]{
-						this.getClass().getSimpleName(), 
-						new Object(){}.getClass().getEnclosingMethod().getName(),
-						SmartLibraryUtil.mapToString(objList, true)}));
-		return objList;
+		return obj;
 	}
 
 	@Override
@@ -189,41 +175,27 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						obj}));
 
-		SmartUser entityObj = SmartLibraryUtil.map(obj, SmartUser.class);
-		
-		if(StringUtils.isNotEmpty(obj.getFirstName())) {
-			entityObj.setFirstName(obj.getFirstName());
+		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcApprId());
+		if(entityObj != null) {
+			SmartUser reqEntityObj = smartUserAssembler.mapToEntityForUpdate(obj);
+			SmartUser resEntityObj = smartUserService.update(reqEntityObj).get();
+			SmartUserDto resObj = smartUserAssembler.mapToDto(resEntityObj);
+			log.info(messageService.getMessage(
+					SharedMessages.LOG003_RESPONSE, 
+					new Object[]{
+							this.getClass().getSimpleName(), 
+							new Object(){}.getClass().getEnclosingMethod().getName(),
+							resObj}));
+			return resObj;
 		}
-		if(StringUtils.isNotEmpty(obj.getMiddleName())) {
-			entityObj.setMiddleName(obj.getMiddleName());
-		}
-		if(StringUtils.isNotEmpty(obj.getLastName())) {
-			entityObj.setLastName(obj.getLastName());
-		}
-		if(StringUtils.isNotEmpty(obj.getGender())) {
-			entityObj.setGender(obj.getGender());
-		}
-		if(obj.getDob() != null) {
-			entityObj.setDob(obj.getSqlDob());
-		}
-		if(StringUtils.isNotEmpty(obj.getPhone())) {
-			entityObj.setPhone(obj.getPhone());
-		}
-		if(StringUtils.isNotEmpty(obj.getEmail())) {
-			entityObj.setEmail(obj.getEmail());
-		}
-		if(StringUtils.isNotEmpty(obj.getProcTs())) {
-			entityObj.setProcTs(obj.getSqlProcTs());
-		}
-		SmartUserDto response = SmartLibraryUtil.map(smartUserService.update(entityObj).get(), SmartUserDto.class);
-		
 		log.info(messageService.getMessage(
 				SharedMessages.LOG003_RESPONSE, 
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName(),
-						response}));
-		return response;
+						"User '" + obj.getName() + "' with App ID '" +obj.getProcApprId() + "'doesn't exists! "}));
+
+		return null;
 	}
 
 	@Override

@@ -9,7 +9,7 @@ import com.smartapps.smartuser.jpa.entities.SmartUser;
 
 @Repository
 public interface SmartUserRepository extends JpaRepository<SmartUser, Integer> {
-	List<SmartUser> findByName(final String userName);
-	List<SmartUser> findByNameAndProcApprId(final String userName, final String appId);
+	SmartUser findByName(final String userName);
+	SmartUser findByNameAndProcApprId(final String userName, final String appId);
 	List<SmartUser> findByProcApprId(final String appId);
 }

@@ -64,7 +64,7 @@ public class SmartUserServiceImpl implements SmartUserService {
 	}
 
 	@Override
-	public List<SmartUser> readByUserName(String userName) {
+	public SmartUser readByUserName(String userName) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
@@ -74,7 +74,7 @@ public class SmartUserServiceImpl implements SmartUserService {
 	}
 
 	@Override
-	public List<SmartUser> readByUserNameAndAppId(String userName, String appId) {
+	public SmartUser readByUserNameAndAppId(String userName, String appId) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
@@ -101,31 +101,35 @@ public class SmartUserServiceImpl implements SmartUserService {
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
-		SmartUser entityObj = readById(obj.getId());
+//		SmartUser entityObj = readById(obj.getId());
+//		
+//		if(StringUtils.isNotEmpty(obj.getFirstName())) {
+//			entityObj.setFirstName(obj.getFirstName());
+//		}
+//		if(StringUtils.isNotEmpty(obj.getMiddleName())) {
+//			entityObj.setMiddleName(obj.getMiddleName());
+//		}
+//		if(StringUtils.isNotEmpty(obj.getLastName())) {
+//			entityObj.setLastName(obj.getLastName());
+//		}
+//		if(StringUtils.isNotEmpty(obj.getGender())) {
+//			entityObj.setGender(obj.getGender());
+//		}
+//		if(obj.getDob() != null) {
+//			entityObj.setDob(obj.getDob());
+//		}
+//		if(StringUtils.isNotEmpty(obj.getPhone())) {
+//			entityObj.setPhone(obj.getPhone());
+//		}
+//		if(StringUtils.isNotEmpty(obj.getEmail())) {
+//			entityObj.setEmail(obj.getEmail());
+//		}
+//		if(StringUtils.isNotEmpty(obj.getProfilePhotoPath())) {
+//			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
+//		}
+//		entityObj.setActive(obj.getActive());
 		
-		if(StringUtils.isNotEmpty(obj.getFirstName())) {
-			entityObj.setFirstName(obj.getFirstName());
-		}
-		if(StringUtils.isNotEmpty(obj.getMiddleName())) {
-			entityObj.setMiddleName(obj.getMiddleName());
-		}
-		if(StringUtils.isNotEmpty(obj.getLastName())) {
-			entityObj.setLastName(obj.getLastName());
-		}
-		if(StringUtils.isNotEmpty(obj.getGender())) {
-			entityObj.setGender(obj.getGender());
-		}
-		if(obj.getDob() != null) {
-			entityObj.setDob(obj.getDob());
-		}
-		if(StringUtils.isNotEmpty(obj.getPhone())) {
-			entityObj.setPhone(obj.getPhone());
-		}
-		if(StringUtils.isNotEmpty(obj.getEmail())) {
-			entityObj.setEmail(obj.getEmail());
-		}
-		
-		return Optional.of(repository.save(entityObj));
+		return Optional.of(repository.save(obj));
 	}
 
 	@Override

@@ -13,8 +13,8 @@ public interface SmartUserService {
 	/* Read */
 	public List<SmartUser> readAll();
 	public SmartUser readById(final Integer id);
-	public List<SmartUser> readByUserName(final String userName);
-	public List<SmartUser> readByUserNameAndAppId(final String userName, final String appId);
+	public SmartUser readByUserName(final String userName);
+	public SmartUser readByUserNameAndAppId(final String userName, final String appId);
 	public List<SmartUser> readByAppId(final String appId);
 	
 	/* Update */

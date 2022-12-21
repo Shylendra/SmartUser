@@ -19,6 +19,8 @@
 		<springdoc-openapi-ui.version>1.5.12</springdoc-openapi-ui.version>
 		<geoip2.version>2.8.0</geoip2.version>
 		<jacoco.version>0.8.6</jacoco.version>
+		<jettison.version>1.4.1</jettison.version>
+		<jjwt.version>0.9.1</jjwt.version>
 	</properties>
 
 	<dependencyManagement>
@@ -107,6 +109,21 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>${jacoco.version}</version>
+			</dependency>
+			<!-- JWT & Springboot security related libraries -->
+			<dependency>
+				<groupId>org.codehaus.jettison</groupId>
+				<artifactId>jettison</artifactId>
+				<version>${jettison.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>${jjwt.version}</version>
 			</dependency>
 
 		</dependencies>
