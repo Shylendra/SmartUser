@@ -3,6 +3,7 @@ package com.smartapps.smartuser.web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
@@ -16,6 +17,7 @@ import com.smartapps.smartuser.web.dto.AuthRequestDto;
 import com.smartapps.smartuser.web.dto.AuthResponseDto;
 import com.smartapps.smartuser.web.security.config.JWTUtil;
 import com.smartapps.smartuser.web.security.config.SmartUserDetailsService;
+import com.smartapps.smartuser.web.util.SmartUserWebUtil;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 //@CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
 @RestController
 @Validated
-@RequestMapping("/authenticate")
+@RequestMapping(SmartUserWebUtil.CONTEXT_ROOT)
 public class AuthenticationController {
 
     @Autowired
@@ -36,25 +38,19 @@ public class AuthenticationController {
     @Autowired
     private JWTUtil jwtUtil;
     
-	@Operation(summary = "Authenticate user")
+	@Operation(summary = SmartUserWebUtil.AUTH_CONTEXT_ROOT_OPERATION)
 	@GlobalApiReponsesPost
-	@PostMapping("/token")
+	@PostMapping(SmartUserWebUtil.AUTH_CONTEXT_ROOT)
 	public ResponseEntity<AuthResponseDto> authenticate(@RequestBody AuthRequestDto authRequest) 
 			throws Exception {
 		
-//        try {
-//            authenticationManager.authenticate(
-//                    new UsernamePasswordAuthenticationToken(
-//                    		authRequest.getUserName(),
-//                    		authRequest.getPassword()
-//                    )
-//            );
-//        } catch (BadCredentialsException e) {
-//            throw new Exception("INVALID_CREDENTIALS: Incorrect username or password", e);
-//        }
-        
 		/* Authenticate */
-        this.authenticate(authRequest.getUserName(), authRequest.getPassword());
+        try {
+            this.authenticate(authRequest.getUserName(), authRequest.getPassword());
+        } catch (BadCredentialsException e) {
+        	log.error("INVALID_CREDENTIALS: Incorrect username or password", e);
+            throw new Exception("INVALID_CREDENTIALS: Incorrect username or password", e);
+        }
         
         /* load UserDetails */
         final UserDetails userDetails = smartUserDetailsService.loadUserByUsername(authRequest.getUserName());

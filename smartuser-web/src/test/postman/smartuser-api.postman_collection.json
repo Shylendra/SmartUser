@@ -1236,7 +1236,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiZXhwIjoxNjcxNjA2MzUzLCJpYXQiOjE2NzE1ODgzNTN9.L5bQhGueOUQGHDaJvpeQPU6Pqxmy73dlnKOkVR7PtFLN0si0h32hE2TxWprSMXY9OQPO-2CE0xQdoZaunSd_9w",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0dXNlcjEiLCJleHAiOjE2NzE3NzEwMjIsImlhdCI6MTY3MTc1MzAyMn0.2aXfC634l5R-2sIe8BiTCqyDSNeV_99kAZvzdWpm0oKaUbawORQnRqaHjQdiUwBelHZDh-D6mITV3uDJqc9UiA",
 								"type": "text"
 							}
 						],
@@ -1865,18 +1865,23 @@
 			]
 		},
 		{
-			"name": "/authenticate/token",
+			"name": "/smartuser-api/authenticate/token",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Accept",
 						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiZXhwIjoxNjcxNjA2MzUzLCJpYXQiOjE2NzE1ODgzNTN9.L5bQhGueOUQGHDaJvpeQPU6Pqxmy73dlnKOkVR7PtFLN0si0h32hE2TxWprSMXY9OQPO-2CE0xQdoZaunSd_9w",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"userName\": \"testuser12\",\r\n  \"password\": \"testpwd1\"\r\n}",
+					"raw": "{\r\n  \"userName\": \"testuser1\",\r\n  \"password\": \"testpwd1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1884,11 +1889,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/authenticate/token",
+					"raw": "{{baseUrl}}/smartuser-api/authenticate/token",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
+						"smartuser-api",
 						"authenticate",
 						"token"
 					]
