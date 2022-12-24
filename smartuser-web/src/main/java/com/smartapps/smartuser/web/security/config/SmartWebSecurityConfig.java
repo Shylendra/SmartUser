@@ -30,7 +30,7 @@ public class SmartWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
     private static final String[] AUTH_WHITELIST = {
             // -- API public endpoints
-            "/smartuser-api/authenticate/**",
+            "/smartuser-api/authenticate/token**",
             // -- Health check
             "/actuator/**",
             // -- Swagger UI v3 (OpenAPI)
