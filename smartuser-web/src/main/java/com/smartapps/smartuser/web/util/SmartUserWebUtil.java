@@ -18,10 +18,10 @@ public class SmartUserWebUtil {
 	public static final String RETRIEVE_NAME_USERS = "api/users/name/{userName}";
 	
 	public static final String RETRIEVE_NAME_APPID_USERS_OPERATION = "Retrieve users by userName and appId";
-	public static final String RETRIEVE_NAME_APPID_USERS = "api/users/name/{userName}/appid";
+	public static final String RETRIEVE_NAME_APPID_USERS = "api/users/name/{userName}/appid/{appId}";
 	
 	public static final String RETRIEVE_APPID_USERS_OPERATION = "Retrieve users by appId";
-	public static final String RETRIEVE_APPID_USERS = "api/users/appid";
+	public static final String RETRIEVE_APPID_USERS = "api/users/appid/{appId}";
 	
 	public static final String UPDATE_USER_OPERATION = "Update user";
 	public static final String UPDATE_USER = "api/users/{id}";

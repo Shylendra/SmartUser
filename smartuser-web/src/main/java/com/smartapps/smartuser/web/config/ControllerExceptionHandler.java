@@ -22,6 +22,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.smartapps.smartlib.exception.ResourceNotFoundException;
+import com.smartapps.smartlib.exception.UnauthorizedException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -42,6 +43,13 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 	public ResponseEntity<Object> constraintViolationException(ConstraintViolationException ex, WebRequest request) {
 		log.info("ControllerExceptionHandler::constraintViolationException()::ConstraintViolationException");
 		return createErrorResponse(HttpStatus.BAD_REQUEST, asList(ex.getMessage()), new HttpHeaders());
+	}
+
+	@ExceptionHandler(UnauthorizedException.class)
+	@ResponseStatus(value = HttpStatus.UNAUTHORIZED)
+	public ResponseEntity<Object> unauthorizedException(UnauthorizedException ex, WebRequest request) {
+		log.info("ControllerExceptionHandler::unauthorizedException()::UnauthorizedException");
+		return createErrorResponse(HttpStatus.UNAUTHORIZED, asList(ex.getMessage()), new HttpHeaders());
 	}
 
     @Override

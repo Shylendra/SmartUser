@@ -15,6 +15,6 @@ public class CommonServiceFacade {
 	protected MessageService messageService;
 	
 	@Autowired
-	protected SmartUserAssembler smartUserAssembler;
+	protected SmartUserAssembler assembler;
 
 }

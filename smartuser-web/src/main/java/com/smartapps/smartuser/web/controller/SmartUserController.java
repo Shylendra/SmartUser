@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.jboss.logging.MDC;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +23,8 @@ import com.smartapps.smartlib.annotations.GlobalApiReponsesDelete;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesGet;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesPost;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesPut;
-import com.smartapps.smartuser.web.dto.SmartUserDto;
+import com.smartapps.smartlib.dto.SmartUserDto;
+import com.smartapps.smartlib.util.SmartHttpUtil;
 import com.smartapps.smartuser.web.util.SmartUserWebUtil;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -40,10 +42,17 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesPost
 	@PostMapping(SmartUserWebUtil.REGISTER_USER)
 	public ResponseEntity<SmartUserDto> register(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,
 			@Parameter(name = "registerUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user) 
 			throws JsonProcessingException {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
 		user.setPassword(encode(user.getPassword()));
 		user.setProcApprId(appId);
 		user.setProcUserId(userId);
@@ -53,11 +62,8 @@ public class SmartUserController extends CommonController {
 	@Operation(summary = SmartUserWebUtil.RETRIEVE_USERS_OPERATION)
 	@GlobalApiReponsesGet
 	@GetMapping(SmartUserWebUtil.RETRIEVE_USERS)
-	public ResponseEntity<List<SmartUserDto>> retrieveAll(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId) 
+	public ResponseEntity<List<SmartUserDto>> retrieveAll() 
 			throws IOException {
-		System.out.println("*** retrieveAll(): ");
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveAll());
 	}
 
@@ -65,8 +71,6 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesGet
 	@GetMapping(SmartUserWebUtil.RETRIEVE_USER)
 	public ResponseEntity<SmartUserDto> retrieveById(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId,
 			@PathVariable("id") @Valid Integer id) {
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveById(id));
 	}
@@ -75,8 +79,6 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesGet
 	@GetMapping(SmartUserWebUtil.RETRIEVE_NAME_USERS)
 	public ResponseEntity<SmartUserDto> retrieveByUserName(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId,
 			@PathVariable("userName") @Valid String userName) throws JsonProcessingException {
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveByUserName(userName));
 	}
@@ -85,9 +87,8 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesGet
 	@GetMapping(SmartUserWebUtil.RETRIEVE_NAME_APPID_USERS)
 	public ResponseEntity<SmartUserDto> retrieveByUserNameAndAppId(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId,
-			@PathVariable("userName") @Valid String userName) throws JsonProcessingException {
+			@PathVariable("userName") @Valid String userName,
+			@PathVariable("appId") @Valid String appId) throws JsonProcessingException {
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveByUserNameAndAppId(userName, appId));
 	}
 
@@ -95,8 +96,7 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesGet
 	@GetMapping(SmartUserWebUtil.RETRIEVE_APPID_USERS)
 	public ResponseEntity<List<SmartUserDto>> retrieveByAppId(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId) throws JsonProcessingException {
+			@PathVariable("appId") @Valid String appId) throws JsonProcessingException {
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveByAppId(appId));
 	}
 
@@ -104,14 +104,21 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesPut
 	@PutMapping(SmartUserWebUtil.UPDATE_USER)
 	public ResponseEntity<SmartUserDto> update(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,
 			@PathVariable("id") @Valid Integer id,
 			@Parameter(name = "updateUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user) 
 			throws JsonProcessingException {
-			user.setId(id);
-			user.setProcApprId(appId);
-			user.setProcUserId(userId);
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
+		user.setId(id);
+		user.setProcApprId(appId);
+		user.setProcUserId(userId);
 		return ResponseEntity.ok().body(smartUserServiceFacade.update(user));
 	}
 
@@ -119,9 +126,16 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesDelete
 	@DeleteMapping(SmartUserWebUtil.DELETE_USER)
 	public ResponseEntity<String> deleteById(
-			@RequestHeader(value = "APP_ID", required = true) String appId,
-			@RequestHeader(value = "USER_ID", required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,			
 			@PathVariable("id") @Valid Integer id) {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
 		smartUserServiceFacade.deleteById(id);
 		return ResponseEntity.ok().body("DELETED");
 	}

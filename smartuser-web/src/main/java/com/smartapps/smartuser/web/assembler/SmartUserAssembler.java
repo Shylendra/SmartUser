@@ -3,8 +3,8 @@ package com.smartapps.smartuser.web.assembler;
 import org.codehaus.plexus.util.StringUtils;
 import org.springframework.stereotype.Component;
 
+import com.smartapps.smartlib.dto.SmartUserDto;
 import com.smartapps.smartuser.jpa.entities.SmartUser;
-import com.smartapps.smartuser.web.dto.SmartUserDto;
 
 @Component
 public class SmartUserAssembler {

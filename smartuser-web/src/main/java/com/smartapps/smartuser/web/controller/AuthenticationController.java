@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.smartapps.smartlib.annotations.GlobalApiReponsesPost;
-import com.smartapps.smartuser.web.dto.AuthRequestDto;
-import com.smartapps.smartuser.web.dto.AuthResponseDto;
+import com.smartapps.smartlib.dto.AuthRequestDto;
+import com.smartapps.smartlib.dto.AuthResponseDto;
 import com.smartapps.smartuser.web.security.config.JWTUtil;
 import com.smartapps.smartuser.web.security.config.SmartUserDetailsService;
 import com.smartapps.smartuser.web.util.SmartUserWebUtil;

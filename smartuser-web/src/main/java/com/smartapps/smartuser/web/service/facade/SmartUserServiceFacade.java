@@ -3,7 +3,7 @@ package com.smartapps.smartuser.web.service.facade;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.smartapps.smartuser.web.dto.SmartUserDto;
+import com.smartapps.smartlib.dto.SmartUserDto;
 
 public interface SmartUserServiceFacade {
 

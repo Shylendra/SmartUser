@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.smartapps.smartuser.web.dto.SmartUserDto;
+import com.smartapps.smartlib.dto.SmartUserDto;
 
 public class SmartUserDetails implements UserDetails {
 

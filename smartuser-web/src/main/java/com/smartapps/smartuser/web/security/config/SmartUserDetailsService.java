@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.smartapps.smartuser.web.dto.SmartUserDto;
+import com.smartapps.smartlib.dto.SmartUserDto;
 import com.smartapps.smartuser.web.service.facade.SmartUserServiceFacade;
 
 @Service

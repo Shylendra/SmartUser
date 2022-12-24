@@ -3,11 +3,9 @@ package com.smartapps.smartuser.jpa.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.codehaus.plexus.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.smartapps.smartlib.exception.ResourceNotFoundException;
 import com.smartapps.smartlib.service.MessageService;
 import com.smartapps.smartlib.util.SharedMessages;
 import com.smartapps.smartuser.jpa.entities.SmartUser;
@@ -25,8 +23,6 @@ public class SmartUserServiceImpl implements SmartUserService {
 	@Autowired
 	private MessageService messageService;
 	
-	private static final String ENTITY_NAME = "Address";
-
 	@Override
 	public Optional<SmartUser> create(SmartUser obj) {
 		log.info(messageService.getMessage(
@@ -55,12 +51,11 @@ public class SmartUserServiceImpl implements SmartUserService {
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		Optional<SmartUser> entityObj = repository.findById(id);
-		if(!entityObj.isPresent()) {
-			throw new ResourceNotFoundException(messageService.getMessage(SharedMessages.ERR001_RESOURCE_NOTFOUND, 
-					new Object[]{ENTITY_NAME,id}));
+		if(entityObj.isPresent()) {
+			return entityObj.get();
 		}
 		
-		return entityObj.get();
+		return null;
 	}
 
 	@Override
@@ -100,35 +95,6 @@ public class SmartUserServiceImpl implements SmartUserService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		
-//		SmartUser entityObj = readById(obj.getId());
-//		
-//		if(StringUtils.isNotEmpty(obj.getFirstName())) {
-//			entityObj.setFirstName(obj.getFirstName());
-//		}
-//		if(StringUtils.isNotEmpty(obj.getMiddleName())) {
-//			entityObj.setMiddleName(obj.getMiddleName());
-//		}
-//		if(StringUtils.isNotEmpty(obj.getLastName())) {
-//			entityObj.setLastName(obj.getLastName());
-//		}
-//		if(StringUtils.isNotEmpty(obj.getGender())) {
-//			entityObj.setGender(obj.getGender());
-//		}
-//		if(obj.getDob() != null) {
-//			entityObj.setDob(obj.getDob());
-//		}
-//		if(StringUtils.isNotEmpty(obj.getPhone())) {
-//			entityObj.setPhone(obj.getPhone());
-//		}
-//		if(StringUtils.isNotEmpty(obj.getEmail())) {
-//			entityObj.setEmail(obj.getEmail());
-//		}
-//		if(StringUtils.isNotEmpty(obj.getProfilePhotoPath())) {
-//			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
-//		}
-//		entityObj.setActive(obj.getActive());
-		
 		return Optional.of(repository.save(obj));
 	}
 

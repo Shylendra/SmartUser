@@ -16,19 +16,7 @@
 							"name": "/api/users/{id}",
 							"request": {
 								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "testpwd1",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "testadmin",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [
@@ -37,13 +25,8 @@
 										"value": "*/*"
 									},
 									{
-										"key": "APP_ID",
-										"value": "TEST_APP1",
-										"type": "text"
-									},
-									{
-										"key": "USER_ID",
-										"value": "testUser",
+										"key": "Authorization",
+										"value": "",
 										"type": "text"
 									}
 								],
@@ -268,12 +251,17 @@
 									},
 									{
 										"key": "APP_ID",
-										"value": "TEST_APP1",
+										"value": "SMART_APP1",
 										"type": "text"
 									},
 									{
 										"key": "USER_ID",
 										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "USER_GROUPS",
+										"value": "ADMIN",
 										"type": "text"
 									},
 									{
@@ -553,12 +541,17 @@
 									},
 									{
 										"key": "APP_ID",
-										"value": "TEST_APP1",
+										"value": "SMART_APP1",
 										"type": "text"
 									},
 									{
 										"key": "USER_ID",
 										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "USER_GROUPS",
+										"value": "ADMIN",
 										"type": "text"
 									},
 									{
@@ -714,16 +707,6 @@
 									{
 										"key": "Accept",
 										"value": "*/*"
-									},
-									{
-										"key": "APP_ID",
-										"value": "TEST_APP1",
-										"type": "text"
-									},
-									{
-										"key": "USER_ID",
-										"value": "testUser",
-										"type": "text"
 									},
 									{
 										"key": "Authorization",
@@ -941,7 +924,7 @@
 							]
 						},
 						{
-							"name": "/api/users/name/{userName}/appid",
+							"name": "/api/users/name/{userName}/appid/{appId}",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -950,23 +933,13 @@
 										"value": "*/*"
 									},
 									{
-										"key": "APP_ID",
-										"value": "TEST_APP1",
-										"type": "text"
-									},
-									{
-										"key": "USER_ID",
-										"value": "testUser",
-										"type": "text"
-									},
-									{
 										"key": "Authorization",
 										"value": "",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/smartuser-api/api/users/name/:userName/appid",
+									"raw": "{{baseUrl}}/smartuser-api/api/users/name/:userName/appid/:appId",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -976,13 +949,18 @@
 										"users",
 										"name",
 										":userName",
-										"appid"
+										"appid",
+										":appId"
 									],
 									"variable": [
 										{
 											"key": "userName",
 											"value": "in cillum occ",
 											"description": "(Required) "
+										},
+										{
+											"key": "appId",
+											"value": null
 										}
 									]
 								}
@@ -1225,16 +1203,6 @@
 								"value": "*/*"
 							},
 							{
-								"key": "APP_ID",
-								"value": "TEST_APP1",
-								"type": "text"
-							},
-							{
-								"key": "USER_ID",
-								"value": "testUser",
-								"type": "text"
-							},
-							{
 								"key": "Authorization",
 								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0dXNlcjEiLCJleHAiOjE2NzE3NzEwMjIsImlhdCI6MTY3MTc1MzAyMn0.2aXfC634l5R-2sIe8BiTCqyDSNeV_99kAZvzdWpm0oKaUbawORQnRqaHjQdiUwBelHZDh-D6mITV3uDJqc9UiA",
 								"type": "text"
@@ -1413,12 +1381,17 @@
 							},
 							{
 								"key": "APP_ID",
-								"value": "TEST_APP1",
+								"value": "SMART_APP1",
 								"type": "text"
 							},
 							{
 								"key": "USER_ID",
 								"value": "testUser",
+								"type": "text"
+							},
+							{
+								"key": "USER_GROUPS",
+								"value": "ADMIN",
 								"type": "text"
 							},
 							{
@@ -1646,23 +1619,13 @@
 								"value": "*/*"
 							},
 							{
-								"key": "APP_ID",
-								"value": "TEST_APP1",
-								"type": "text"
-							},
-							{
-								"key": "USER_ID",
-								"value": "testUser",
-								"type": "text"
-							},
-							{
 								"key": "Authorization",
 								"value": "",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/smartuser-api/api/users/appid",
+							"raw": "{{baseUrl}}/smartuser-api/api/users/appid/:appId",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1670,7 +1633,14 @@
 								"smartuser-api",
 								"api",
 								"users",
-								"appid"
+								"appid",
+								":appId"
+							],
+							"variable": [
+								{
+									"key": "appId",
+									"value": null
+								}
 							]
 						}
 					},
@@ -1872,11 +1842,6 @@
 					{
 						"key": "Accept",
 						"value": "*/*"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiZXhwIjoxNjcxNjA2MzUzLCJpYXQiOjE2NzE1ODgzNTN9.L5bQhGueOUQGHDaJvpeQPU6Pqxmy73dlnKOkVR7PtFLN0si0h32hE2TxWprSMXY9OQPO-2CE0xQdoZaunSd_9w",
-						"type": "text"
 					}
 				],
 				"body": {

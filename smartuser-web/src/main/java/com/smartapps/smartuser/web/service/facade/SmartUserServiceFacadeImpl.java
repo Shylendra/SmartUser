@@ -5,14 +5,13 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.codehaus.plexus.util.StringUtils;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.smartapps.smartlib.dto.SmartUserDto;
 import com.smartapps.smartlib.util.SharedMessages;
 import com.smartapps.smartlib.util.SmartLibraryUtil;
 import com.smartapps.smartuser.jpa.entities.SmartUser;
-import com.smartapps.smartuser.web.dto.SmartUserDto;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,9 +31,9 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 
 		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcApprId());
 		if(entityObj == null) {
-			SmartUser reqEntityObj = smartUserAssembler.mapToEntity(obj);
+			SmartUser reqEntityObj = assembler.mapToEntity(obj);
 			SmartUser resEntityObj = smartUserService.create(reqEntityObj).get();
-			SmartUserDto resObj = smartUserAssembler.mapToDto(resEntityObj);
+			SmartUserDto resObj = assembler.mapToDto(resEntityObj);
 			log.info(messageService.getMessage(
 					SharedMessages.LOG003_RESPONSE, 
 					new Object[]{
@@ -64,7 +63,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 		List<SmartUserDto> objList = new ArrayList<>();
 		List<SmartUser> entityObjList = smartUserService.readAll();
 		for(SmartUser entityObj: entityObjList) {
-			objList.add(SmartLibraryUtil.map(entityObj, SmartUserDto.class));
+			objList.add(assembler.mapToDto(entityObj));
 		}
 
 		log.info(messageService.getMessage(
@@ -85,15 +84,18 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 
-		SmartUserDto response = SmartLibraryUtil.map(smartUserService.readById(id), SmartUserDto.class);
-
-		log.info(messageService.getMessage(
-				SharedMessages.LOG003_RESPONSE, 
-				new Object[]{
-						this.getClass().getSimpleName(), 
-						new Object(){}.getClass().getEnclosingMethod().getName(),
-						response}));
-		return response;
+		SmartUser entityObj = smartUserService.readById(id);
+		if (entityObj != null) {
+			SmartUserDto resObj = assembler.mapToDto(entityObj);
+			log.info(messageService.getMessage(
+					SharedMessages.LOG003_RESPONSE, 
+					new Object[]{
+							this.getClass().getSimpleName(), 
+							new Object(){}.getClass().getEnclosingMethod().getName(),
+							resObj}));
+			return resObj;
+		}
+		return null;
 	}
 
 	@Override
@@ -106,15 +108,14 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 		
 		SmartUser entityObj = smartUserService.readByUserName(userName);
 		if(entityObj != null) {
-			//obj = SmartLibraryUtil.map(entityObj, SmartUserDto.class);
-			SmartUserDto obj = smartUserAssembler.mapToDto(entityObj);
+			SmartUserDto resObj = assembler.mapToDto(entityObj);
 			log.info(messageService.getMessage(
 					SharedMessages.LOG003_RESPONSE, 
 					new Object[]{
 							this.getClass().getSimpleName(), 
 							new Object(){}.getClass().getEnclosingMethod().getName(),
-							SmartLibraryUtil.mapToString(obj, true)}));
-			return obj;
+							SmartLibraryUtil.mapToString(resObj, true)}));
+			return resObj;
 		}
 		
 		return null;
@@ -128,19 +129,19 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
-		SmartUserDto obj = null;
 		SmartUser entityObj = smartUserService.readByUserNameAndAppId(userName, appId);
 		if(entityObj != null) {
-			obj = SmartLibraryUtil.map(entityObj, SmartUserDto.class);
+			SmartUserDto resObj = assembler.mapToDto(entityObj);
 			log.info(messageService.getMessage(
 					SharedMessages.LOG003_RESPONSE, 
 					new Object[]{
 							this.getClass().getSimpleName(), 
 							new Object(){}.getClass().getEnclosingMethod().getName(),
-							SmartLibraryUtil.mapToString(obj, true)}));
+							SmartLibraryUtil.mapToString(resObj, true)}));
+			return resObj;
 		}
 		
-		return obj;
+		return null;
 	}
 
 	@Override
@@ -154,7 +155,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 		List<SmartUserDto> objList = new ArrayList<>();
 		List<SmartUser> entityObjList = smartUserService.readByAppId(appId);
 		for(SmartUser entityObj: entityObjList) {
-			objList.add(SmartLibraryUtil.map(entityObj, SmartUserDto.class));
+			objList.add(assembler.mapToDto(entityObj));
 		}
 		
 		log.info(messageService.getMessage(
@@ -177,9 +178,9 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 
 		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcApprId());
 		if(entityObj != null) {
-			SmartUser reqEntityObj = smartUserAssembler.mapToEntityForUpdate(obj);
+			SmartUser reqEntityObj = assembler.mapToEntityForUpdate(obj);
 			SmartUser resEntityObj = smartUserService.update(reqEntityObj).get();
-			SmartUserDto resObj = smartUserAssembler.mapToDto(resEntityObj);
+			SmartUserDto resObj = assembler.mapToDto(resEntityObj);
 			log.info(messageService.getMessage(
 					SharedMessages.LOG003_RESPONSE, 
 					new Object[]{
