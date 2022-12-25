@@ -1379,6 +1379,185 @@
 					]
 				},
 				{
+					"name": "/api/users/context",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "APP_ID",
+								"value": "SMART_APP1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/smartuser-api/api/users/context",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"smartuser-api",
+								"api",
+								"users",
+								"context"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "You are not authorized to access the resource.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Accessing the resource you were trying to reach is forbidden.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "The resource you were trying to reach is not found.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/smartuser-api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"smartuser-api",
+										"users"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
 					"name": "/api/users",
 					"request": {
 						"auth": {

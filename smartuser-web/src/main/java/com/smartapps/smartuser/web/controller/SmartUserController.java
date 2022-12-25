@@ -3,6 +3,7 @@ package com.smartapps.smartuser.web.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.codehaus.plexus.util.StringUtils;
@@ -46,7 +47,8 @@ public class SmartUserController extends CommonController {
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
 			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,
-			@Parameter(name = "registerUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user) 
+			@Parameter(name = "registerUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user,
+			HttpServletRequest request) 
 			throws JsonProcessingException {
 		
 		/** Logging **/
@@ -57,6 +59,7 @@ public class SmartUserController extends CommonController {
 		user.setPassword(encode(user.getPassword()));
 		user.setProcApprId(appId);
 		user.setProcUserId(userId);
+		user.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 		return ResponseEntity.ok().body(smartUserServiceFacade.register(user));
 	}
 
@@ -109,7 +112,8 @@ public class SmartUserController extends CommonController {
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
 			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,
 			@PathVariable("id") @Valid Integer id,
-			@Parameter(name = "updateUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user) 
+			@Parameter(name = "updateUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user,
+			HttpServletRequest request) 
 			throws JsonProcessingException {
 		
 		/** Logging **/
@@ -120,6 +124,7 @@ public class SmartUserController extends CommonController {
 		user.setId(id);
 		user.setProcApprId(appId);
 		user.setProcUserId(userId);
+		user.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 		if(StringUtils.isNotEmpty(user.getPassword())) {
 			user.setPassword(encode(user.getPassword()));
 		}

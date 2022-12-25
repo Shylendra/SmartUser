@@ -33,6 +33,9 @@ public class SmartUserWebUtil {
 	public static final String AUTH_CONTEXT_ROOT_OPERATION = "Authenticate user";
 	public static final String AUTH_CONTEXT_ROOT = "/authenticate/token";
 
+	public static final String AUTH_RETRIEVE_USER_CONTEXT_OPERATION = "Authenticate user";
+	public static final String AUTH_RETRIEVE_USER_CONTEXT = "api/users/context";
+
 	private SmartUserWebUtil() {
 	}
 
