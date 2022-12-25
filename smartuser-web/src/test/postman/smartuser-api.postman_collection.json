@@ -26,7 +26,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "",
+										"value": "{{jwt_token}}",
 										"type": "text"
 									}
 								],
@@ -44,7 +44,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "5",
+											"value": "2",
 											"description": "(Required) "
 										}
 									]
@@ -266,13 +266,13 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "",
+										"value": "{{jwt_token}}",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"testuser1\",\n  \"firstName\": \"testFN-UPD\",\n  \"middleName\": \"testMN-UPD\",\n  \"lastName\": \"testLN-UPD\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-30\",\n  \"phone\": \"0417360023\",\n  \"email\": \"test@emailUPD.com\"\n}",
+									"raw": "{\n  \"name\": \"testuser1\",\n  \"firstName\": \"testFN-UPD2\",\n  \"middleName\": \"testMN-UPD2\",\n  \"lastName\": \"testLN-UPD2\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-30\",\n  \"phone\": \"0417360023\",\n  \"email\": \"test@emailUPD.com\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -556,7 +556,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "",
+										"value": "{{jwt_token}}",
 										"type": "text"
 									}
 								],
@@ -574,7 +574,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1",
+											"value": "4",
 											"description": "(Required) "
 										}
 									]
@@ -710,7 +710,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "",
+										"value": "{{jwt_token}}",
 										"type": "text"
 									}
 								],
@@ -729,7 +729,7 @@
 									"variable": [
 										{
 											"key": "userName",
-											"value": "testadmin",
+											"value": "testuser1",
 											"description": "(Required) "
 										}
 									]
@@ -933,8 +933,23 @@
 										"value": "*/*"
 									},
 									{
+										"key": "APP_ID",
+										"value": "SMART_APP1",
+										"type": "text"
+									},
+									{
+										"key": "USER_ID",
+										"value": "testUser",
+										"type": "text"
+									},
+									{
+										"key": "USER_GROUPS",
+										"value": "ADMIN",
+										"type": "text"
+									},
+									{
 										"key": "Authorization",
-										"value": "",
+										"value": "{{jwt_token}}",
 										"type": "text"
 									}
 								],
@@ -955,12 +970,12 @@
 									"variable": [
 										{
 											"key": "userName",
-											"value": "in cillum occ",
+											"value": "testuser1",
 											"description": "(Required) "
 										},
 										{
 											"key": "appId",
-											"value": null
+											"value": "SMART_APP1"
 										}
 									]
 								}
@@ -1204,7 +1219,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0dXNlcjEiLCJleHAiOjE2NzE3NzEwMjIsImlhdCI6MTY3MTc1MzAyMn0.2aXfC634l5R-2sIe8BiTCqyDSNeV_99kAZvzdWpm0oKaUbawORQnRqaHjQdiUwBelHZDh-D6mITV3uDJqc9UiA",
+								"value": "{{jwt_token}}",
 								"type": "text"
 							}
 						],
@@ -1396,7 +1411,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiZXhwIjoxNjcxNjA2MzUzLCJpYXQiOjE2NzE1ODgzNTN9.L5bQhGueOUQGHDaJvpeQPU6Pqxmy73dlnKOkVR7PtFLN0si0h32hE2TxWprSMXY9OQPO-2CE0xQdoZaunSd_9w",
+								"value": "{{jwt_token}}",
 								"type": "text"
 							}
 						],
@@ -1620,7 +1635,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "",
+								"value": "{{jwt_token}}",
 								"type": "text"
 							}
 						],
@@ -1836,17 +1851,50 @@
 		},
 		{
 			"name": "/smartuser-api/authenticate/token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"var token = jsonData.jwtToken;\r",
+							"console.log(\"jsonData: \" + jsonData);\r",
+							"console.log(\"jwt_token: \" + token);\r",
+							"pm.environment.set(\"jwt_token\", \"Bearer \" + token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Accept",
 						"value": "*/*"
+					},
+					{
+						"key": "APP_ID",
+						"value": "SMART_APP1",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "USER_ID",
+						"value": "testUser",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "USER_GROUPS",
+						"value": "ADMIN",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"userName\": \"testuser1\",\r\n  \"password\": \"testpwd1\"\r\n}",
+					"raw": "{\r\n  \"userName\": \"superadmin\",\r\n  \"password\": \"sadmin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

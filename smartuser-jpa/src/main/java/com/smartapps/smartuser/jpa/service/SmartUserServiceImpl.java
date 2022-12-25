@@ -109,4 +109,9 @@ public class SmartUserServiceImpl implements SmartUserService {
 		repository.deleteById(readById(id).getId());
 	}
 
+	@Override
+	public boolean isUserExist(String userName) {
+		return repository.existsSmartUserByName(userName);
+	}
+
 }

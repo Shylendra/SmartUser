@@ -60,7 +60,6 @@ public class JWTRequestFilter extends OncePerRequestFilter {
         	}
         } else {
     		log.error(String.format(ERROR_INVALID_TOKENPREFIX, SmartHttpUtil.AUTH_HEADER_PREFIX));
-			throw new UnauthorizedException(String.format(ERROR_INVALID_TOKENPREFIX, SmartHttpUtil.AUTH_HEADER_PREFIX));
         }
         
         if(StringUtils.isNotEmpty(userName) && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -79,7 +78,7 @@ public class JWTRequestFilter extends OncePerRequestFilter {
     			throw new UnauthorizedException(ERROR_INVALID_TOKEN);
             }
         } else {
-        	System.out.println(ERROR_EMPTY_USERNAME);
+        	log.error(ERROR_EMPTY_USERNAME);
         }
         
         chain.doFilter(request, response);

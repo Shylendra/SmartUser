@@ -132,8 +132,7 @@ public class SmartUserAssembler {
 		return entityObj;
 	}
 
-	public SmartUser mapToEntityForUpdate(SmartUserDto obj) {
-		SmartUser entityObj = new SmartUser();
+	public void mapToEntityForUpdate(SmartUser entityObj, SmartUserDto obj) {
 		
 		if(StringUtils.isNotEmpty(obj.getFirstName())) {
 			entityObj.setFirstName(obj.getFirstName());
@@ -180,7 +179,5 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getProcUserLongitude())) {
 			entityObj.setProcUserLongitude(obj.getProcUserLongitude());
 		}
-
-		return entityObj;
 	}	
 }

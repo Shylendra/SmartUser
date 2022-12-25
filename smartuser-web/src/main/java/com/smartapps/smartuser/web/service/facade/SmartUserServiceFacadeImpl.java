@@ -178,8 +178,8 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 
 		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcApprId());
 		if(entityObj != null) {
-			SmartUser reqEntityObj = assembler.mapToEntityForUpdate(obj);
-			SmartUser resEntityObj = smartUserService.update(reqEntityObj).get();
+			assembler.mapToEntityForUpdate(entityObj, obj);
+			SmartUser resEntityObj = smartUserService.update(entityObj).get();
 			SmartUserDto resObj = assembler.mapToDto(resEntityObj);
 			log.info(messageService.getMessage(
 					SharedMessages.LOG003_RESPONSE, 
@@ -207,6 +207,16 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		smartUserService.deleteById(id);
+	}
+
+	@Override
+	public boolean isUserExist(String userName) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		return smartUserService.isUserExist(userName);
 	}
 
 }

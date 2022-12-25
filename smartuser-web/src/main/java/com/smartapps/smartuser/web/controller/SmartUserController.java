@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.codehaus.plexus.util.StringUtils;
 import org.jboss.logging.MDC;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -119,6 +120,9 @@ public class SmartUserController extends CommonController {
 		user.setId(id);
 		user.setProcApprId(appId);
 		user.setProcUserId(userId);
+		if(StringUtils.isNotEmpty(user.getPassword())) {
+			user.setPassword(encode(user.getPassword()));
+		}
 		return ResponseEntity.ok().body(smartUserServiceFacade.update(user));
 	}
 

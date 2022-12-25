@@ -12,4 +12,5 @@ public interface SmartUserRepository extends JpaRepository<SmartUser, Integer> {
 	SmartUser findByName(final String userName);
 	SmartUser findByNameAndProcApprId(final String userName, final String appId);
 	List<SmartUser> findByProcApprId(final String appId);
+	boolean existsSmartUserByName(String userName);
 }

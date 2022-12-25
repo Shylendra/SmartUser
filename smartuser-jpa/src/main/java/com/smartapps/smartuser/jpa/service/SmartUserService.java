@@ -16,6 +16,7 @@ public interface SmartUserService {
 	public SmartUser readByUserName(final String userName);
 	public SmartUser readByUserNameAndAppId(final String userName, final String appId);
 	public List<SmartUser> readByAppId(final String appId);
+	public boolean isUserExist(final String userName);
 	
 	/* Update */
 	public Optional<SmartUser> update(final SmartUser obj);
