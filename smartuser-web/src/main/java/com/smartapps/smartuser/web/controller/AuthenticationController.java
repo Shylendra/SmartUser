@@ -1,5 +1,7 @@
 package com.smartapps.smartuser.web.controller;
 
+import javax.ws.rs.core.MediaType;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +35,7 @@ import lombok.extern.slf4j.Slf4j;
 //@CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
 @RestController
 @Validated
-@RequestMapping(SmartUserWebUtil.CONTEXT_ROOT)
+@RequestMapping(path = SmartUserWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)
 public class AuthenticationController {
 
     @Autowired

@@ -1601,3 +1601,73 @@ java.lang.ClassCastException: com.smartapps.smartuser.web.security.config.SmartU
   "email" : "test@email.com",
   "profilePhotoPath" : "testpath/one/two/test.jpg"
 }
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+2022-12-26 18:19:45.462 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-12-26 18:19:45.538 [main] INFO  c.s.smartuser.web.SmartuserApplication - Starting SmartuserApplication using Java 1.8.0_291 on DESKTOP-1C84R2R with PID 19820 (C:\Users\shyle\git\SmartUser\smartuser-web\target\classes started by shyle in C:\Users\shyle\git\SmartUser\smartuser-web)
+2022-12-26 18:19:45.540 [main] INFO  c.s.smartuser.web.SmartuserApplication - No active profile set, falling back to default profiles: default
+2022-12-26 18:19:49.376 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 18:19:49.847 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 439 ms. Found 1 JPA repository interfaces.
+2022-12-26 18:19:52.599 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=021b0b2b-1088-3daa-8cc9-bfc71156d630
+2022-12-26 18:19:56.139 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2022-12-26 18:19:56.160 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2022-12-26 18:19:56.171 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-26 18:19:56.171 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-12-26 18:19:57.314 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-26 18:19:57.314 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 11602 ms
+2022-12-26 18:20:00.662 [main] INFO  o.e.s.o.t.o.p.UpfrontAllocatingPageSource - Allocating 100.0MB in chunks
+2022-12-26 18:20:00.804 [main] INFO  org.ehcache.core.EhcacheManager - Cache 'thirty-minute-cache' created in EhcacheManager.
+2022-12-26 18:20:00.914 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2022-12-26 18:20:00.929 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2022-12-26 18:20:01.227 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-12-26 18:20:04.133 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-12-26 18:20:04.775 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 18:20:04.979 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-12-26 18:20:05.600 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 18:20:06.199 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-12-26 18:20:08.359 [main] INFO  o.h.e.t.j.p.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 18:20:08.402 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 18:20:10.141 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - Load MainConfig ***
+2022-12-26 18:20:10.141 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - JNDI: null
+2022-12-26 18:20:12.819 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b625e82, org.springframework.security.web.context.SecurityContextPersistenceFilter@601e7c97, org.springframework.security.web.header.HeaderWriterFilter@4bc39640, org.springframework.security.web.authentication.logout.LogoutFilter@7f7f544a, com.smartapps.smartuser.web.security.config.JWTRequestFilter@1221d607, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18d09283, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75f446df, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22657db1, org.springframework.security.web.session.SessionManagementFilter@5248c05a, org.springframework.security.web.access.ExceptionTranslationFilter@5b4880b3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a8ab98f]
+2022-12-26 18:20:21.584 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 16 endpoint(s) beneath base path '/actuator'
+2022-12-26 18:20:23.168 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2022-12-26 18:20:23.388 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-12-26 18:20:23.592 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-12-26 18:20:23.686 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-12-26 18:20:23.719 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 18:20:23.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-12-26 18:20:23.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-12-26 18:20:23.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-12-26 18:20:23.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2022-12-26 18:20:23.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-12-26 18:20:23.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-12-26 18:20:23.765 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-12-26 18:20:25.099 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2022-12-26 18:20:25.114 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2022-12-26 18:20:25.114 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-12-26 18:20:25.122 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1672039225122 with initial instances count: 1
+2022-12-26 18:20:25.122 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SMARTUSER with eureka with status UP
+2022-12-26 18:20:25.130 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1672039225130, current=UP, previous=STARTING]
+2022-12-26 18:20:25.130 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_SMARTUSER/DESKTOP-1C84R2R:SmartUser:8081: registering service...
+2022-12-26 18:20:25.130 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2022-12-26 18:20:25.209 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2022-12-26 18:20:25.209 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2022-12-26 18:20:25.287 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_SMARTUSER/DESKTOP-1C84R2R:SmartUser:8081 - registration status: 204
+2022-12-26 18:20:25.931 [main] INFO  c.s.smartuser.web.SmartuserApplication - Started SmartuserApplication in 42.917 seconds (JVM running for 48.332)
+2022-12-26 18:20:25.947 [main] INFO  c.s.smartuser.web.config.SmartDataLoader - [*** SMARTADDRESS-API::SmartDataLoader::run() ***]:
+2022-12-26 18:20:25.978 [main] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTADDRESS-API::SmartUserServiceFacadeImpl::isUserExist() ***]:
+2022-12-26 18:20:26.449 [main] DEBUG org.hibernate.SQL - select smartuser0_.id as col_0_0_ from smart_user smartuser0_ where smartuser0_.name=? limit ?
+2022-12-26 18:20:26.465 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2022-12-26 18:20:26.511 [main] INFO  c.s.smartuser.web.config.SmartDataLoader - User 'superadmin' already exists.
+2022-12-26 18:25:23.784 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 18:30:23.793 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 18:35:23.807 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 18:40:23.821 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 18:45:23.824 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 18:50:23.837 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 18:55:23.852 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 19:00:23.856 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 19:05:23.868 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 19:10:23.884 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-12-26 19:15:23.889 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

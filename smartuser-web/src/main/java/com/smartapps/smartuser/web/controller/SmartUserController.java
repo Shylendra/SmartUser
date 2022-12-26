@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import javax.ws.rs.core.MediaType;
 
 import org.codehaus.plexus.util.StringUtils;
 import org.jboss.logging.MDC;
@@ -37,7 +38,7 @@ import lombok.extern.slf4j.Slf4j;
 //@CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
 @RestController
 @Validated
-@RequestMapping(SmartUserWebUtil.CONTEXT_ROOT)
+@RequestMapping(path = SmartUserWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)
 public class SmartUserController extends CommonController {
 
 	@Operation(summary = SmartUserWebUtil.REGISTER_USER_OPERATION)
