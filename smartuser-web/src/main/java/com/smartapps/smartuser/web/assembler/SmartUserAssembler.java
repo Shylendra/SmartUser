@@ -1,5 +1,7 @@
 package com.smartapps.smartuser.web.assembler;
 
+import java.util.ArrayList;
+
 import org.codehaus.plexus.util.StringUtils;
 import org.springframework.stereotype.Component;
 
@@ -47,6 +49,7 @@ public class SmartUserAssembler {
 			obj.setProfilePhotoPath(entityObj.getProfilePhotoPath());
 		}
 		obj.setActive(entityObj.getActive());
+		obj.setAddresses(new ArrayList<>());
 
 
 		/* Base Entity */
