@@ -1558,7 +1558,7 @@
 					]
 				},
 				{
-					"name": "/api/users",
+					"name": "/register",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -1581,22 +1581,25 @@
 							{
 								"key": "USER_ID",
 								"value": "testUser",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							},
 							{
 								"key": "USER_GROUPS",
 								"value": "ADMIN",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							},
 							{
 								"key": "Authorization",
 								"value": "{{jwt_token}}",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"testuser1\",\n  \"password\": \"testpwd1\",\n  \"roles\": \"ADMIN\",\n  \"firstName\": \"testFN\",\n  \"middleName\": \"testMN\",\n  \"lastName\": \"testLN\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-26\",\n  \"phone\": \"0417364793\",\n  \"email\": \"test@email.com\",\n  \"profilePhotoPath\": \"testpath/one/two/test.jpg\"\n}",
+							"raw": "{\n  \"name\": \"testuser2\",\n  \"password\": \"testpwd2\",\n  \"roles\": \"ADMIN\",\n  \"firstName\": \"testFN\",\n  \"middleName\": \"testMN\",\n  \"lastName\": \"testLN\",\n  \"gender\": \"MALE\",\n  \"dob\": \"2022-02-26\",\n  \"phone\": \"0417364793\",\n  \"email\": \"test@email.com\",\n  \"profilePhotoPath\": \"testpath/one/two/test.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1604,14 +1607,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/smartuser-api/api/users",
+							"raw": "{{baseUrl}}/smartuser-api/register",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"smartuser-api",
-								"api",
-								"users"
+								"register"
 							]
 						}
 					},

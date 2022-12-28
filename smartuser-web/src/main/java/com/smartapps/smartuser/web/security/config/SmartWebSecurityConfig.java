@@ -31,6 +31,7 @@ public class SmartWebSecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] AUTH_WHITELIST = {
             // -- API public endpoints
             "/smartuser-api/authenticate/**",
+            "/smartuser-api/register",
             // -- Health check
             "/actuator/**",
             // -- Swagger UI v3 (OpenAPI)
@@ -52,6 +53,7 @@ public class SmartWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
+        .cors().disable()
         .authorizeRequests()
         	.antMatchers(AUTH_WHITELIST).permitAll()// whitelist public UI resources
         	.antMatchers("/api/**").authenticated()// require authentication for any endpoint that's not whitelisted

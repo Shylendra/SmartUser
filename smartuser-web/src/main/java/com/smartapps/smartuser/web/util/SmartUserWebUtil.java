@@ -6,7 +6,7 @@ public class SmartUserWebUtil {
 	public static final String CONTEXT_ROOT = "/smartuser-api/";
 
 	public static final String REGISTER_USER_OPERATION = "Register user";
-	public static final String REGISTER_USER = "api/users";
+	public static final String REGISTER_USER = "register";
 	
 	public static final String RETRIEVE_USERS_OPERATION = "Retrieve users";
 	public static final String RETRIEVE_USERS = "api/users";
@@ -31,7 +31,7 @@ public class SmartUserWebUtil {
 
 	/* AuthenticationController Settings */
 	public static final String AUTH_CONTEXT_ROOT_OPERATION = "Authenticate user";
-	public static final String AUTH_CONTEXT_ROOT = "/authenticate/token";
+	public static final String AUTH_CONTEXT_ROOT = "authenticate/token";
 
 	public static final String AUTH_RETRIEVE_USER_CONTEXT_OPERATION = "Authenticate user";
 	public static final String AUTH_RETRIEVE_USER_CONTEXT = "api/users/context";

@@ -11,6 +11,7 @@ import org.codehaus.plexus.util.StringUtils;
 import org.jboss.logging.MDC;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-//@CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
+@CrossOrigin(origins = "*")
 @RestController
 @Validated
 @RequestMapping(path = SmartUserWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)
@@ -46,8 +47,8 @@ public class SmartUserController extends CommonController {
 	@PostMapping(SmartUserWebUtil.REGISTER_USER)
 	public ResponseEntity<SmartUserDto> register(
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
-			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
-			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = false) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@Parameter(name = "registerUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user,
 			HttpServletRequest request) 
 			throws JsonProcessingException {
