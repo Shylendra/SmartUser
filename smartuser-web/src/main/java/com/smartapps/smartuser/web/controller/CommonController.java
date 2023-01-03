@@ -2,6 +2,7 @@ package com.smartapps.smartuser.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.smartapps.smartlib.service.ClientDetailsService;
 import com.smartapps.smartlib.service.MessageService;
@@ -18,9 +19,7 @@ public class CommonController {
 	@Autowired
 	protected MessageService messageService;
 	
-	protected String encode(String rawPassword) {
-		return new BCryptPasswordEncoder().encode(rawPassword);
-	}
-	
+	@Autowired
+	protected PasswordEncoder passwordEncoder;
 
 }

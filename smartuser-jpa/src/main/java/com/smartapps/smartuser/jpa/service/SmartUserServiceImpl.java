@@ -40,7 +40,7 @@ public class SmartUserServiceImpl implements SmartUserService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		return repository.findAll();
+		return repository.findAllByOrderByProcTsDesc();
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class SmartUserServiceImpl implements SmartUserService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		return repository.findByProcApprId(appId);
+		return repository.findByProcApprIdOrderByIdDesc(appId);
 	}
 
 	@Override

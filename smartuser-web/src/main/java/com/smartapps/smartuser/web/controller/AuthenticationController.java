@@ -33,7 +33,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@CrossOrigin(origins = "*")
+@CrossOrigin("*")
 @RestController
 @Validated
 @RequestMapping(path = SmartUserWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)

@@ -36,7 +36,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@CrossOrigin(origins = "*")
+@CrossOrigin("*")
 @RestController
 @Validated
 @RequestMapping(path = SmartUserWebUtil.CONTEXT_ROOT, produces = MediaType.APPLICATION_JSON)
@@ -58,7 +58,7 @@ public class SmartUserController extends CommonController {
 		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
 		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 
-		user.setPassword(encode(user.getPassword()));
+		user.setPassword(passwordEncoder.encode(user.getPassword().trim()));
 		user.setProcApprId(appId);
 		user.setProcUserId(userId);
 		user.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
@@ -112,7 +112,7 @@ public class SmartUserController extends CommonController {
 	public ResponseEntity<SmartUserDto> update(
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
-			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
 			@PathVariable("id") @Valid Integer id,
 			@Parameter(name = "updateUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user,
 			HttpServletRequest request) 
@@ -128,7 +128,7 @@ public class SmartUserController extends CommonController {
 		user.setProcUserId(userId);
 		user.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 		if(StringUtils.isNotEmpty(user.getPassword())) {
-			user.setPassword(encode(user.getPassword()));
+			user.setPassword(passwordEncoder.encode(user.getPassword().trim()));
 		}
 		return ResponseEntity.ok().body(smartUserServiceFacade.update(user));
 	}
@@ -139,7 +139,7 @@ public class SmartUserController extends CommonController {
 	public ResponseEntity<String> deleteById(
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
-			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = true) String userGroups,			
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,			
 			@PathVariable("id") @Valid Integer id) {
 		
 		/** Logging **/
