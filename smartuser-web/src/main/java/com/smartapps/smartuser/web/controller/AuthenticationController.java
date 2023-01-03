@@ -65,8 +65,12 @@ public class AuthenticationController {
         /* load UserDetails */
         final UserDetails userDetails = smartUserDetailsService.loadUserByUsername(authRequest.getUserName());
         
+        AuthResponseDto resp = new AuthResponseDto();
+        resp.setJwtToken(jwtUtil.generateToken(userDetails));
+        resp.setUserContext(smartUserDetailsService.getUserContext());
+        
         /* Generate token & return */
-		return ResponseEntity.ok().body(new AuthResponseDto(jwtUtil.generateToken(userDetails)));
+		return ResponseEntity.ok().body(resp);
 	}
 
 	@Operation(summary = SmartUserWebUtil.AUTH_RETRIEVE_USER_CONTEXT_OPERATION)
@@ -81,7 +85,7 @@ public class AuthenticationController {
 			UserDetails userDetails = (UserDetails)principal;
 			userContext = SmartUserContextDto.builder()
 					.appId(StringUtils.isNotEmpty(appId)? appId : null)
-					.userName(userDetails.getUsername())
+					.name(userDetails.getUsername())
 					.roles(userDetails.getAuthorities().toString()).build();
 		}
 		

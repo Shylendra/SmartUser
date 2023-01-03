@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.codehaus.plexus.util.StringUtils;
 import org.springframework.stereotype.Component;
 
+import com.smartapps.smartlib.dto.SmartUserContextDto;
 import com.smartapps.smartlib.dto.SmartUserDto;
 import com.smartapps.smartuser.jpa.entities.SmartUser;
 
@@ -183,4 +184,47 @@ public class SmartUserAssembler {
 			entityObj.setProcUserLongitude(obj.getProcUserLongitude());
 		}
 	}	
+	
+	public SmartUserContextDto mapToSmartUserContext(SmartUserDto obj) {
+		SmartUserContextDto entityObj = new SmartUserContextDto();
+		
+		entityObj.setId(obj.getId());
+		if(StringUtils.isNotEmpty(obj.getProcApprId())) {
+			entityObj.setAppId(obj.getProcApprId());
+		}
+		if(StringUtils.isNotEmpty(obj.getName())) {
+			entityObj.setName(obj.getName());
+		}
+		if(StringUtils.isNotEmpty(obj.getRoles())) {
+			entityObj.setRoles(obj.getRoles());
+		}
+		if(StringUtils.isNotEmpty(obj.getFirstName())) {
+			entityObj.setFirstName(obj.getFirstName());
+		}
+		if(StringUtils.isNotEmpty(obj.getMiddleName())) {
+			entityObj.setMiddleName(obj.getMiddleName());
+		}
+		if(StringUtils.isNotEmpty(obj.getLastName())) {
+			entityObj.setLastName(obj.getLastName());
+		}
+		if(StringUtils.isNotEmpty(obj.getGender())) {
+			entityObj.setGender(obj.getGender());
+		}
+		if(StringUtils.isNotEmpty(obj.getDob())) {
+			entityObj.setDob(obj.getDob());
+		}
+		if(StringUtils.isNotEmpty(obj.getPhone())) {
+			entityObj.setPhone(obj.getPhone());
+		}
+		if(StringUtils.isNotEmpty(obj.getEmail())) {
+			entityObj.setEmail(obj.getEmail());
+		}
+		if(StringUtils.isNotEmpty(obj.getProfilePhotoPath())) {
+			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
+		}
+		entityObj.setActive(obj.getActive());
+
+		return entityObj;
+	}
+	
 }

@@ -2,8 +2,10 @@ package com.smartapps.smartuser.web.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.smartapps.smartlib.dto.SmartUserDto;
 import com.smartapps.smartlib.service.MessageService;
 import com.smartapps.smartlib.util.SharedMessages;
@@ -19,9 +21,14 @@ public class SmartDataLoader implements CommandLineRunner {
 	protected SmartUserServiceFacade smartUserServiceFacade;
 	
 	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Autowired
 	protected MessageService messageService;
 
-	public static final String ROOTUSER = "superadmin";
+	public static final String ROOTUSER = "superadmin";//sadmin
+	public static final String TESTADMIN = "testadmin";//tadmin
+	public static final String TESTUSER = "testuser";//tuser
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -31,20 +38,33 @@ public class SmartDataLoader implements CommandLineRunner {
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
-		if(!smartUserServiceFacade.isUserExist(ROOTUSER)) {
-			smartUserServiceFacade.register(prepareRootUser());
-			log.info("User '"+ ROOTUSER +"' Created successfully.");
+		//Create Super Admin
+		createUser(ROOTUSER, "sadmin", "SUPER_ADMIN");
+		
+		//Create Admin
+		createUser(TESTADMIN, "tadmin", "ADMIN");
+		
+		//Create User
+		createUser(TESTUSER, "tuser", "USER");
+		
+	}
+	
+	private void createUser(String name, String pwd, String role) throws JsonProcessingException {
+		
+		if(!smartUserServiceFacade.isUserExist(name)) {
+			smartUserServiceFacade.register(prepareUser(name, pwd, role));
+			log.info("User '"+ name +"' Created successfully.");
 		} else {
-			log.info("User '"+ ROOTUSER +"' already exists.");
+			log.info("User '"+ name +"' already exists.");
 		}
 		
 	}
 	
-	private SmartUserDto prepareRootUser() {
+	private SmartUserDto prepareUser(String name, String pwd, String role) {
 		return SmartUserDto.builder()
-				.name(ROOTUSER)
-				.password("$2a$12$3p9rmHfTG0h.iDMGGDLr3ObYMUcwfR/r6Nl2.RggM4aKqFbByIk7G")
-				.roles("SUPER_ADMIN")
+				.name(name)
+				.password(passwordEncoder.encode(pwd))
+				.roles(role)
 				.firstName(ROOTUSER + "FN")
 				.middleName(ROOTUSER + "MN")
 				.lastName(ROOTUSER + "LN")
