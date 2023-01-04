@@ -29,6 +29,7 @@ public class SmartDataLoader implements CommandLineRunner {
 	public static final String ROOTUSER = "superadmin";//sadmin
 	public static final String TESTADMIN = "testadmin";//tadmin
 	public static final String TESTUSER = "testuser";//tuser
+	public static final String APP_ID = "SUPER_ADMIN_APP";
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -39,20 +40,20 @@ public class SmartDataLoader implements CommandLineRunner {
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
 		//Create Super Admin
-		createUser(ROOTUSER, "sadmin", "SUPER_ADMIN");
+		createUser(ROOTUSER, "sadmin", "SUPER_ADMIN", "https://smartapps-assets.s3.amazonaws.com/image/SUPER_ADMIN_APP/superadmin/profile/Suryansh_20230104200856.jpg");
 		
 		//Create Admin
-		createUser(TESTADMIN, "tadmin", "ADMIN");
+		createUser(TESTADMIN, "tadmin", "ADMIN", "https://smartapps-assets.s3.amazonaws.com/image/SUPER_ADMIN_APP/testadmin/profile/IMG_5146_20230104201208.JPG");
 		
 		//Create User
-		createUser(TESTUSER, "tuser", "USER");
+		createUser(TESTUSER, "tuser", "USER", "https://smartapps-assets.s3.amazonaws.com/image/SUPER_ADMIN_APP/testuser/profile/ganesha-icon_20230104201548.jpg");
 		
 	}
 	
-	private void createUser(String name, String pwd, String role) throws JsonProcessingException {
+	private void createUser(String name, String pwd, String role, String photoPath) throws JsonProcessingException {
 		
 		if(!smartUserServiceFacade.isUserExist(name)) {
-			smartUserServiceFacade.register(prepareUser(name, pwd, role));
+			smartUserServiceFacade.register(prepareUser(name, pwd, role, photoPath));
 			log.info("User '"+ name +"' Created successfully.");
 		} else {
 			log.info("User '"+ name +"' already exists.");
@@ -60,23 +61,23 @@ public class SmartDataLoader implements CommandLineRunner {
 		
 	}
 	
-	private SmartUserDto prepareUser(String name, String pwd, String role) {
+	private SmartUserDto prepareUser(String name, String pwd, String role, String photoPath) {
 		return SmartUserDto.builder()
 				.name(name)
 				.password(passwordEncoder.encode(pwd))
 				.roles(role)
-				.firstName(ROOTUSER + "FN")
-				.middleName(ROOTUSER + "MN")
-				.lastName(ROOTUSER + "LN")
+				.firstName(name + "First")
+				.middleName(name + "Middle")
+				.lastName(name + "Last")
 				.gender("MALE")
 				.dob("2022-12-20")
 				.phone("")
-				.email(ROOTUSER + "@email.com")
-				.profilePhotoPath("")
+				.email(name + "@email.com")
+				.profilePhotoPath(photoPath)
 				.active(true)
 				//.procTs("")
-				.procApprId("SUPER_ADMIN_APP")
-				.procUserId("superuser")
+				.procApprId(APP_ID)
+				.procUserId(ROOTUSER)
 				.procUserIpAddress("1.1.1.1")
 				.procUserLatitude("1.1.1.1")
 				.procUserLongitude("1.1.1.1").build();
