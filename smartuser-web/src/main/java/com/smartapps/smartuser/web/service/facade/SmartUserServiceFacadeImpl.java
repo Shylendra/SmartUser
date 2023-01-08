@@ -77,7 +77,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 	}
 
 	@Override
-	public SmartUserDto retrieveById(Integer id) {
+	public SmartUserDto retrieveById(String id) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
@@ -200,7 +200,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 	}
 
 	@Override
-	public void deleteById(Integer id) {
+	public void deleteById(String id) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{

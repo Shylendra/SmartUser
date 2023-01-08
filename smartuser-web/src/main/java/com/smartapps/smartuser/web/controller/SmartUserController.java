@@ -77,7 +77,7 @@ public class SmartUserController extends CommonController {
 	@GlobalApiReponsesGet
 	@GetMapping(SmartUserWebUtil.RETRIEVE_USER)
 	public ResponseEntity<SmartUserDto> retrieveById(
-			@PathVariable("id") @Valid Integer id) {
+			@PathVariable("id") @Valid String id) {
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveById(id));
 	}
 
@@ -113,7 +113,7 @@ public class SmartUserController extends CommonController {
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
 			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
-			@PathVariable("id") @Valid Integer id,
+			@PathVariable("id") @Valid String id,
 			@Parameter(name = "updateUser", description = "JSON with request object in and out", required = true) @Valid @RequestBody SmartUserDto user,
 			HttpServletRequest request) 
 			throws JsonProcessingException {
@@ -140,7 +140,7 @@ public class SmartUserController extends CommonController {
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
 			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
 			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,			
-			@PathVariable("id") @Valid Integer id) {
+			@PathVariable("id") @Valid String id) {
 		
 		/** Logging **/
 		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);

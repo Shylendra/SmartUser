@@ -44,7 +44,7 @@ public class SmartUserServiceImpl implements SmartUserService {
 	}
 
 	@Override
-	public SmartUser readById(Integer id) {
+	public SmartUser readById(String id) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{
@@ -99,7 +99,7 @@ public class SmartUserServiceImpl implements SmartUserService {
 	}
 
 	@Override
-	public void deleteById(Integer id) {
+	public void deleteById(String id) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 
 				new Object[]{

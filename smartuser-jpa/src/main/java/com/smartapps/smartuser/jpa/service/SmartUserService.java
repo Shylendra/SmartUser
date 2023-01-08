@@ -12,7 +12,7 @@ public interface SmartUserService {
 	
 	/* Read */
 	public List<SmartUser> readAll();
-	public SmartUser readById(final Integer id);
+	public SmartUser readById(final String id);
 	public SmartUser readByUserName(final String userName);
 	public SmartUser readByUserNameAndAppId(final String userName, final String appId);
 	public List<SmartUser> readByAppId(final String appId);
@@ -22,6 +22,6 @@ public interface SmartUserService {
 	public Optional<SmartUser> update(final SmartUser obj);
 	
 	/* Delete */
-	public void deleteById(final Integer id);
+	public void deleteById(final String id);
 
 }

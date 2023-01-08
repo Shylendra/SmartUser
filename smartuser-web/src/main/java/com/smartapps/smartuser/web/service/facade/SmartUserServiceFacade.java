@@ -9,12 +9,12 @@ public interface SmartUserServiceFacade {
 
 	public SmartUserDto register(final SmartUserDto obj) throws JsonProcessingException;
 	public List<SmartUserDto> retrieveAll() throws JsonProcessingException;
-	public SmartUserDto retrieveById(final Integer id);
+	public SmartUserDto retrieveById(final String id);
 	public SmartUserDto retrieveByUserName(final String userName) throws JsonProcessingException;
 	public SmartUserDto retrieveByUserNameAndAppId(final String userName, final String appId) throws JsonProcessingException;
 	public boolean isUserExist(final String userName);
 	public List<SmartUserDto> retrieveByAppId(final String appId) throws JsonProcessingException;
 	public SmartUserDto update(final SmartUserDto obj) throws JsonProcessingException;
-	public void deleteById(final Integer id);
+	public void deleteById(final String id);
 
 }

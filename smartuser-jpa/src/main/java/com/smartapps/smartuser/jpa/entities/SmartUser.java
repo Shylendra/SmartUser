@@ -13,7 +13,10 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
+import com.smartapps.smartlib.config.SmartSequenceIdGenerator;
 import com.smartapps.smartlib.converter.TrimConverter;
 import com.smartapps.smartlib.entities.CommonEntity;
 
@@ -33,11 +36,24 @@ import lombok.NoArgsConstructor;
 public class SmartUser extends CommonEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private static final String SEQUENCE_NAME = "smartuser_seq";
+	
+	private static final String SEQUENCE_ID_PREFIX = "SUN";
+	
+	private static final String SEQUENCE_STRATEGY = "com.smartapps.smartlib.config.SmartSequenceIdGenerator";
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
-	private int id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQUENCE_NAME)
+    @GenericGenerator(
+            name = SEQUENCE_NAME, 
+            strategy = SEQUENCE_STRATEGY, 
+            parameters = {
+                @Parameter(name = SmartSequenceIdGenerator.INCREMENT_PARAM, value = "50"),
+                @Parameter(name = SmartSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = SEQUENCE_ID_PREFIX),
+                @Parameter(name = SmartSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%06d") })
+    private String id;
 
 	@Column(name = "NAME")
 	@Convert(converter = TrimConverter.class)
