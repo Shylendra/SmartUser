@@ -34,6 +34,15 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(entityObj.getLastName())) {
 			obj.setLastName(entityObj.getLastName());
 		}
+		if(StringUtils.isNotEmpty(entityObj.getAbout())) {
+			obj.setAbout(entityObj.getAbout());
+		}
+		if(StringUtils.isNotEmpty(entityObj.getCompany())) {
+			obj.setCompany(entityObj.getCompany());
+		}
+		if(StringUtils.isNotEmpty(entityObj.getJob())) {
+			obj.setJob(entityObj.getJob());
+		}
 		if(StringUtils.isNotEmpty(entityObj.getGender())) {
 			obj.setGender(entityObj.getGender());
 		}
@@ -50,6 +59,18 @@ public class SmartUserAssembler {
 			obj.setProfilePhotoPath(entityObj.getProfilePhotoPath());
 		}
 		obj.setActive(entityObj.getActive());
+		if(StringUtils.isNotEmpty(entityObj.getTwitterUrl())) {
+			obj.setTwitterUrl(entityObj.getTwitterUrl());
+		}
+		if(StringUtils.isNotEmpty(entityObj.getFacebookUrl())) {
+			obj.setFacebookUrl(entityObj.getFacebookUrl());
+		}
+		if(StringUtils.isNotEmpty(entityObj.getInstagramUrl())) {
+			obj.setInstagramUrl(entityObj.getInstagramUrl());
+		}
+		if(StringUtils.isNotEmpty(entityObj.getLinkedInUrl())) {
+			obj.setLinkedInUrl(entityObj.getLinkedInUrl());
+		}
 		obj.setAddresses(new ArrayList<>());
 
 
@@ -96,6 +117,15 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getLastName())) {
 			entityObj.setLastName(obj.getLastName());
 		}
+		if(StringUtils.isNotEmpty(obj.getAbout())) {
+			entityObj.setAbout(obj.getAbout());
+		}
+		if(StringUtils.isNotEmpty(obj.getCompany())) {
+			entityObj.setCompany(obj.getCompany());
+		}
+		if(StringUtils.isNotEmpty(obj.getJob())) {
+			entityObj.setJob(obj.getJob());
+		}
 		if(StringUtils.isNotEmpty(obj.getGender())) {
 			entityObj.setGender(obj.getGender());
 		}
@@ -112,6 +142,18 @@ public class SmartUserAssembler {
 			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
 		}
 		entityObj.setActive(obj.getActive());
+		if(StringUtils.isNotEmpty(obj.getTwitterUrl())) {
+			entityObj.setTwitterUrl(obj.getTwitterUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getFacebookUrl())) {
+			entityObj.setFacebookUrl(obj.getFacebookUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getInstagramUrl())) {
+			entityObj.setInstagramUrl(obj.getInstagramUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getLinkedInUrl())) {
+			entityObj.setLinkedInUrl(obj.getLinkedInUrl());
+		}
 
 		/* Base Entity */
 		if(StringUtils.isNotEmpty(obj.getProcTs())) {
@@ -147,6 +189,15 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getLastName())) {
 			entityObj.setLastName(obj.getLastName());
 		}
+		if(StringUtils.isNotEmpty(obj.getAbout())) {
+			entityObj.setAbout(obj.getAbout());
+		}
+		if(StringUtils.isNotEmpty(obj.getCompany())) {
+			entityObj.setCompany(obj.getCompany());
+		}
+		if(StringUtils.isNotEmpty(obj.getJob())) {
+			entityObj.setJob(obj.getJob());
+		}
 		if(StringUtils.isNotEmpty(obj.getGender())) {
 			entityObj.setGender(obj.getGender());
 		}
@@ -163,6 +214,18 @@ public class SmartUserAssembler {
 			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
 		}
 		entityObj.setActive(obj.getActive());
+		if(StringUtils.isNotEmpty(obj.getTwitterUrl())) {
+			entityObj.setTwitterUrl(obj.getTwitterUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getFacebookUrl())) {
+			entityObj.setFacebookUrl(obj.getFacebookUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getInstagramUrl())) {
+			entityObj.setInstagramUrl(obj.getInstagramUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getLinkedInUrl())) {
+			entityObj.setLinkedInUrl(obj.getLinkedInUrl());
+		}
 
 		/* Base Entity */
 		if(StringUtils.isNotEmpty(obj.getProcTs())) {
@@ -207,6 +270,15 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getLastName())) {
 			entityObj.setLastName(obj.getLastName());
 		}
+		if(StringUtils.isNotEmpty(obj.getAbout())) {
+			entityObj.setAbout(obj.getAbout());
+		}
+		if(StringUtils.isNotEmpty(obj.getCompany())) {
+			entityObj.setCompany(obj.getCompany());
+		}
+		if(StringUtils.isNotEmpty(obj.getJob())) {
+			entityObj.setJob(obj.getJob());
+		}
 		if(StringUtils.isNotEmpty(obj.getGender())) {
 			entityObj.setGender(obj.getGender());
 		}
@@ -223,7 +295,19 @@ public class SmartUserAssembler {
 			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
 		}
 		entityObj.setActive(obj.getActive());
-
+		if(StringUtils.isNotEmpty(obj.getTwitterUrl())) {
+			entityObj.setTwitterUrl(obj.getTwitterUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getFacebookUrl())) {
+			entityObj.setFacebookUrl(obj.getFacebookUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getInstagramUrl())) {
+			entityObj.setInstagramUrl(obj.getInstagramUrl());
+		}
+		if(StringUtils.isNotEmpty(obj.getLinkedInUrl())) {
+			entityObj.setLinkedInUrl(obj.getLinkedInUrl());
+		}
+		
 		return entityObj;
 	}
 	

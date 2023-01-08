@@ -27,9 +27,9 @@ public class SmartDataLoader implements CommandLineRunner {
 	protected MessageService messageService;
 
 	public static final String ROOTUSER = "superadmin";//sadmin
-	public static final String TESTADMIN = "testadmin";//tadmin
-	public static final String TESTUSER = "testuser";//tuser
-	public static final String APP_ID = "SUPER_ADMIN_APP";
+	public static final String TESTADMIN = "admin";//admin
+	public static final String TESTUSER = "user";//user
+	public static final String APP_ID = "SMART_ADMIN";
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -40,20 +40,20 @@ public class SmartDataLoader implements CommandLineRunner {
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		
 		//Create Super Admin
-		createUser(ROOTUSER, "sadmin", "SUPER_ADMIN", "https://smartapps-assets.s3.amazonaws.com/image/SUPER_ADMIN_APP/superadmin/profile/Suryansh_20230104200856.jpg");
+		createUser(ROOTUSER, "sadmin", "SUPER_ADMIN");
 		
 		//Create Admin
-		createUser(TESTADMIN, "tadmin", "ADMIN", "https://smartapps-assets.s3.amazonaws.com/image/SUPER_ADMIN_APP/testadmin/profile/IMG_5146_20230104201208.JPG");
+		createUser(TESTADMIN, "admin", "ADMIN");
 		
 		//Create User
-		createUser(TESTUSER, "tuser", "USER", "https://smartapps-assets.s3.amazonaws.com/image/SUPER_ADMIN_APP/testuser/profile/ganesha-icon_20230104201548.jpg");
+		createUser(TESTUSER, "user", "USER");
 		
 	}
 	
-	private void createUser(String name, String pwd, String role, String photoPath) throws JsonProcessingException {
+	private void createUser(String name, String pwd, String role) throws JsonProcessingException {
 		
 		if(!smartUserServiceFacade.isUserExist(name)) {
-			smartUserServiceFacade.register(prepareUser(name, pwd, role, photoPath));
+			smartUserServiceFacade.register(prepareUser(name, pwd, role));
 			log.info("User '"+ name +"' Created successfully.");
 		} else {
 			log.info("User '"+ name +"' already exists.");
@@ -61,26 +61,20 @@ public class SmartDataLoader implements CommandLineRunner {
 		
 	}
 	
-	private SmartUserDto prepareUser(String name, String pwd, String role, String photoPath) {
+	private SmartUserDto prepareUser(String name, String pwd, String role) {
 		return SmartUserDto.builder()
 				.name(name)
 				.password(passwordEncoder.encode(pwd))
 				.roles(role)
-				.firstName(name + "First")
-				.middleName(name + "Middle")
-				.lastName(name + "Last")
-				.gender("MALE")
+				.firstName(name.toUpperCase() + "First")
+				.middleName(name.toUpperCase() + "Middle")
+				.lastName(name.toUpperCase() + "Last")
 				.dob("2022-12-20")
-				.phone("")
 				.email(name + "@email.com")
-				.profilePhotoPath(photoPath)
 				.active(true)
-				//.procTs("")
 				.procApprId(APP_ID)
 				.procUserId(ROOTUSER)
-				.procUserIpAddress("1.1.1.1")
-				.procUserLatitude("1.1.1.1")
-				.procUserLongitude("1.1.1.1").build();
+				.build();
 	}
 
 }
