@@ -34,6 +34,10 @@ public class SmartUserDetailsService implements UserDetailsService {
 		this.userContext = smartUserAssembler.mapToSmartUserContext(user);
 		return new SmartUserDetails(user);
 	}
+	
+	public Boolean isValidAppUser(String userName, String appId) {
+		return smartUserService.isUserExist(userName, appId);
+	}
 
 	public SmartUserContextDto getUserContext() {
 		return this.userContext;
