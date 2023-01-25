@@ -11,7 +11,10 @@ import com.smartapps.smartuser.jpa.entities.SmartUser;
 public interface SmartUserRepository extends JpaRepository<SmartUser, String> {
 	List<SmartUser> findAllByOrderByProcTsDesc();
 	SmartUser findByName(final String userName);
-	SmartUser findByNameAndProcApprId(final String userName, final String appId);
-	List<SmartUser> findByProcApprIdOrderByIdDesc(final String appId);
+	SmartUser findByNameAndProcAppId(final String userName, final String appId);
+	List<SmartUser> findByProcAppIdOrderByIdDesc(final String appId);
+	List<SmartUser> findByProcAppIdInOrderByIdDesc(final List<String> appIds);
 	boolean existsSmartUserByName(String userName);
+	boolean existsSmartUserByNameAndProcAppId(final String userName, final String appId);
+	void deleteByIdIn(List<String> ids);
 }

@@ -71,6 +71,7 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(entityObj.getLinkedInUrl())) {
 			obj.setLinkedInUrl(entityObj.getLinkedInUrl());
 		}
+		obj.setPrimaryAddressId(entityObj.getPrimaryAddressId());
 		obj.setAddresses(new ArrayList<>());
 
 
@@ -78,8 +79,8 @@ public class SmartUserAssembler {
 		if(entityObj.getProcTs() != null) {
 			obj.setProcTs(entityObj.getProcTs().toString());
 		}
-		if(StringUtils.isNotEmpty(entityObj.getProcApprId())) {
-			obj.setProcApprId(entityObj.getProcApprId());
+		if(StringUtils.isNotEmpty(entityObj.getProcAppId())) {
+			obj.setProcAppId(entityObj.getProcAppId());
 		}
 		if(StringUtils.isNotEmpty(entityObj.getProcUserId())) {
 			obj.setProcUserId(entityObj.getProcUserId());
@@ -154,13 +155,14 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getLinkedInUrl())) {
 			entityObj.setLinkedInUrl(obj.getLinkedInUrl());
 		}
-
+		entityObj.setPrimaryAddressId(obj.getPrimaryAddressId());
+		
 		/* Base Entity */
 		if(StringUtils.isNotEmpty(obj.getProcTs())) {
 			entityObj.setProcTs(obj.getSqlProcTs());
 		}
-		if(StringUtils.isNotEmpty(obj.getProcApprId())) {
-			entityObj.setProcApprId(obj.getProcApprId());
+		if(StringUtils.isNotEmpty(obj.getProcAppId())) {
+			entityObj.setProcAppId(obj.getProcAppId());
 		}
 		if(StringUtils.isNotEmpty(obj.getProcUserId())) {
 			entityObj.setProcUserId(obj.getProcUserId());
@@ -226,13 +228,14 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getLinkedInUrl())) {
 			entityObj.setLinkedInUrl(obj.getLinkedInUrl());
 		}
-
+		entityObj.setPrimaryAddressId(obj.getPrimaryAddressId());
+		
 		/* Base Entity */
 		if(StringUtils.isNotEmpty(obj.getProcTs())) {
 			entityObj.setProcTs(obj.getSqlProcTs());
 		}
-		if(StringUtils.isNotEmpty(obj.getProcApprId())) {
-			entityObj.setProcApprId(obj.getProcApprId());
+		if(StringUtils.isNotEmpty(obj.getProcAppId())) {
+			entityObj.setProcAppId(obj.getProcAppId());
 		}
 		if(StringUtils.isNotEmpty(obj.getProcUserId())) {
 			entityObj.setProcUserId(obj.getProcUserId());
@@ -248,12 +251,12 @@ public class SmartUserAssembler {
 		}
 	}	
 	
-	public SmartUserContextDto mapToSmartUserContext(SmartUserDto obj) {
+	public SmartUserContextDto mapToSmartUserContext(SmartUser obj) {
 		SmartUserContextDto entityObj = new SmartUserContextDto();
 		
 		entityObj.setId(obj.getId());
-		if(StringUtils.isNotEmpty(obj.getProcApprId())) {
-			entityObj.setAppId(obj.getProcApprId());
+		if(StringUtils.isNotEmpty(obj.getProcAppId())) {
+			entityObj.setAppId(obj.getProcAppId());
 		}
 		if(StringUtils.isNotEmpty(obj.getName())) {
 			entityObj.setName(obj.getName());
@@ -282,9 +285,9 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getGender())) {
 			entityObj.setGender(obj.getGender());
 		}
-		if(StringUtils.isNotEmpty(obj.getDob())) {
-			entityObj.setDob(obj.getDob());
-		}
+//		if(StringUtils.isNotEmpty(obj.getDob())) {
+//			entityObj.setDob(obj.getDob());
+//		}
 		if(StringUtils.isNotEmpty(obj.getPhone())) {
 			entityObj.setPhone(obj.getPhone());
 		}
@@ -307,6 +310,7 @@ public class SmartUserAssembler {
 		if(StringUtils.isNotEmpty(obj.getLinkedInUrl())) {
 			entityObj.setLinkedInUrl(obj.getLinkedInUrl());
 		}
+		entityObj.setPrimaryAddressId(obj.getPrimaryAddressId());
 		
 		return entityObj;
 	}

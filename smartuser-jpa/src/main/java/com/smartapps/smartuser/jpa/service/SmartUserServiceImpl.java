@@ -75,7 +75,7 @@ public class SmartUserServiceImpl implements SmartUserService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		return repository.findByNameAndProcApprId(userName, appId);
+		return repository.findByNameAndProcAppId(userName, appId);
 	}
 
 	@Override
@@ -85,7 +85,17 @@ public class SmartUserServiceImpl implements SmartUserService {
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
-		return repository.findByProcApprIdOrderByIdDesc(appId);
+		return repository.findByProcAppIdOrderByIdDesc(appId);
+	}
+
+	@Override
+	public List<SmartUser> readByAppIds(List<String> appIds) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		return repository.findByProcAppIdInOrderByIdDesc(appIds);
 	}
 
 	@Override
@@ -112,6 +122,21 @@ public class SmartUserServiceImpl implements SmartUserService {
 	@Override
 	public boolean isUserExist(String userName) {
 		return repository.existsSmartUserByName(userName);
+	}
+
+	@Override
+	public boolean isUserExist(String userName, String appId) {
+		return repository.existsSmartUserByNameAndProcAppId(userName, appId);
+	}
+
+	@Override
+	public void delete(List<String> ids) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		repository.deleteByIdIn(ids);
 	}
 
 }

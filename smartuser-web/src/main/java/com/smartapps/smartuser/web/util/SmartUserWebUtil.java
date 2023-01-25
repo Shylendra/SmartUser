@@ -20,14 +20,23 @@ public class SmartUserWebUtil {
 	public static final String RETRIEVE_NAME_APPID_USERS_OPERATION = "Retrieve users by userName and appId";
 	public static final String RETRIEVE_NAME_APPID_USERS = "api/users/name/{userName}/appid/{appId}";
 	
+	public static final String RETRIEVE_NAME_APPID_USEREXISTS_OPERATION = "Check if user exists by userName and appId";
+	public static final String RETRIEVE_NAME_APPID_USEREXISTS = "user-exists/name/{userName}/appid/{appId}";
+	
 	public static final String RETRIEVE_APPID_USERS_OPERATION = "Retrieve users by appId";
 	public static final String RETRIEVE_APPID_USERS = "api/users/appid/{appId}";
+	
+	public static final String RETRIEVE_APPIDS_USERS_OPERATION = "Retrieve users by appIds";
+	public static final String RETRIEVE_APPIDS_USERS = "api/users/appids";
 	
 	public static final String UPDATE_USER_OPERATION = "Update user";
 	public static final String UPDATE_USER = "api/users/{id}";
 	
 	public static final String DELETE_USER_OPERATION = "Delete user by id";
 	public static final String DELETE_USER = "api/users/{id}";
+	
+	public static final String DELETE_USER_INBULK_OPERATION = "Delete users by ids(bulk delete)";
+	public static final String DELETE_USER_INBULK = "api/users/bulk-delete";
 
 	/* AuthenticationController Settings */
 	public static final String AUTH_CONTEXT_ROOT_OPERATION = "Authenticate user";

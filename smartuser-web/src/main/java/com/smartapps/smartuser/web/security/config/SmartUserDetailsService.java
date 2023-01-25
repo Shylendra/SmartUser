@@ -6,17 +6,16 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.smartapps.smartlib.dto.SmartUserContextDto;
-import com.smartapps.smartlib.dto.SmartUserDto;
+import com.smartapps.smartuser.jpa.entities.SmartUser;
+import com.smartapps.smartuser.jpa.service.SmartUserService;
 import com.smartapps.smartuser.web.assembler.SmartUserAssembler;
-import com.smartapps.smartuser.web.service.facade.SmartUserServiceFacade;
 
 @Service
 public class SmartUserDetailsService implements UserDetailsService {
 
 	@Autowired
-	private SmartUserServiceFacade smartUserServiceFacade;
+	private SmartUserService smartUserService;
 	
 	@Autowired
 	private SmartUserAssembler smartUserAssembler;
@@ -25,13 +24,8 @@ public class SmartUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		SmartUserDto user = null;
+		SmartUser user = smartUserService.readByUserName(userName);
 		this.userContext = null;
-		try {
-			user = smartUserServiceFacade.retrieveByUserName(userName);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
 		
 		if(user == null) {
 			throw new UsernameNotFoundException("User " + userName + " not found.");

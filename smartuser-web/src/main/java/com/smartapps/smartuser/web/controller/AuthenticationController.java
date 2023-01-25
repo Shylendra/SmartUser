@@ -26,6 +26,7 @@ import com.smartapps.smartlib.dto.AuthResponseDto;
 import com.smartapps.smartlib.dto.SmartUserContextDto;
 import com.smartapps.smartlib.util.SmartHttpUtil;
 import com.smartapps.smartuser.web.security.config.JWTUtil;
+import com.smartapps.smartuser.web.security.config.SmartSecurityUtil;
 import com.smartapps.smartuser.web.security.config.SmartUserDetailsService;
 import com.smartapps.smartuser.web.util.SmartUserWebUtil;
 
@@ -78,17 +79,7 @@ public class AuthenticationController {
 	@GetMapping(SmartUserWebUtil.AUTH_RETRIEVE_USER_CONTEXT)
 	public ResponseEntity<SmartUserContextDto> retrieveUserContext(
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = false) String appId) {
-		SmartUserContextDto userContext = null;
-		
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			UserDetails userDetails = (UserDetails)principal;
-			userContext = SmartUserContextDto.builder()
-					.appId(StringUtils.isNotEmpty(appId)? appId : null)
-					.name(userDetails.getUsername())
-					.roles(userDetails.getAuthorities().toString()).build();
-		}
-		
+		SmartUserContextDto userContext = SmartSecurityUtil.retrievepUserContext(appId);
 		log.info("User context: ", userContext);
 		return ResponseEntity.ok().body(userContext);
 	}

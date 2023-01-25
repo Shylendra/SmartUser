@@ -72,7 +72,7 @@ public class SmartDataLoader implements CommandLineRunner {
 				.dob("2022-12-20")
 				.email(name + "@email.com")
 				.active(true)
-				.procApprId(APP_ID)
+				.procAppId(APP_ID)
 				.procUserId(ROOTUSER)
 				.build();
 	}

@@ -29,7 +29,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						obj}));
 
-		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcApprId());
+		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcAppId());
 		if(entityObj == null) {
 			SmartUser reqEntityObj = assembler.mapToEntity(obj);
 			SmartUser resEntityObj = smartUserService.create(reqEntityObj).get();
@@ -48,7 +48,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName(),
-						"User '" + obj.getName() + "' with App ID '" +obj.getProcApprId() + "'already exists! "}));
+						"User '" + obj.getName() + "' with App ID '" +obj.getProcAppId() + "'already exists! "}));
 		return null;
 	}
 
@@ -168,6 +168,29 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 	}
 
 	@Override
+	public List<SmartUserDto> retrieveByAppIds(List<String> appIds) throws JsonProcessingException {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		
+		List<SmartUserDto> objList = new ArrayList<>();
+		List<SmartUser> entityObjList = smartUserService.readByAppIds(appIds);
+		for(SmartUser entityObj: entityObjList) {
+			objList.add(assembler.mapToDto(entityObj));
+		}
+		
+		log.info(messageService.getMessage(
+				SharedMessages.LOG003_RESPONSE, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName(),
+						SmartLibraryUtil.mapToString(objList, true)}));
+		return objList;
+	}
+
+	@Override
 	public SmartUserDto update(SmartUserDto obj) throws JsonProcessingException {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG002_REQUEST, 
@@ -176,7 +199,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						new Object(){}.getClass().getEnclosingMethod().getName(),
 						obj}));
 
-		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcApprId());
+		SmartUser entityObj = smartUserService.readByUserNameAndAppId(obj.getName(), obj.getProcAppId());
 		if(entityObj != null) {
 			assembler.mapToEntityForUpdate(entityObj, obj);
 			SmartUser resEntityObj = smartUserService.update(entityObj).get();
@@ -194,7 +217,7 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 				new Object[]{
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName(),
-						"User '" + obj.getName() + "' with App ID '" +obj.getProcApprId() + "'doesn't exists! "}));
+						"User '" + obj.getName() + "' with App ID '" +obj.getProcAppId() + "'doesn't exists! "}));
 
 		return null;
 	}
@@ -217,6 +240,26 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 						this.getClass().getSimpleName(), 
 						new Object(){}.getClass().getEnclosingMethod().getName()}));
 		return smartUserService.isUserExist(userName);
+	}
+
+	@Override
+	public Boolean isUserExist(String userName, String appId) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		return smartUserService.isUserExist(userName, appId);
+	}
+
+	@Override
+	public void delete(List<String> ids) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		smartUserService.delete(ids);
 	}
 
 }

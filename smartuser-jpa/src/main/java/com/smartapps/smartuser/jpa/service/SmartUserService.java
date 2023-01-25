@@ -16,12 +16,15 @@ public interface SmartUserService {
 	public SmartUser readByUserName(final String userName);
 	public SmartUser readByUserNameAndAppId(final String userName, final String appId);
 	public List<SmartUser> readByAppId(final String appId);
+	public List<SmartUser> readByAppIds(final List<String> appIds);
 	public boolean isUserExist(final String userName);
+	public boolean isUserExist(final String userName, final String appId);
 	
 	/* Update */
 	public Optional<SmartUser> update(final SmartUser obj);
 	
 	/* Delete */
 	public void deleteById(final String id);
+	public void delete(List<String> ids);
 
 }

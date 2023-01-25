@@ -29,6 +29,7 @@ import com.smartapps.smartlib.annotations.GlobalApiReponsesPost;
 import com.smartapps.smartlib.annotations.GlobalApiReponsesPut;
 import com.smartapps.smartlib.dto.SmartUserDto;
 import com.smartapps.smartlib.util.SmartHttpUtil;
+import com.smartapps.smartlib.validators.annotations.ValidAppId;
 import com.smartapps.smartuser.web.util.SmartUserWebUtil;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -59,9 +60,13 @@ public class SmartUserController extends CommonController {
 		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 
 		user.setPassword(passwordEncoder.encode(user.getPassword().trim()));
-		user.setProcApprId(appId);
+		user.setProcAppId(appId);
 		user.setProcUserId(userId);
 		user.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
+		user.setActive(true);
+		if(StringUtils.isEmpty(user.getRoles())) {
+			user.setRoles("USER");
+		}
 		return ResponseEntity.ok().body(smartUserServiceFacade.register(user));
 	}
 
@@ -98,12 +103,29 @@ public class SmartUserController extends CommonController {
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveByUserNameAndAppId(userName, appId));
 	}
 
+	@Operation(summary = SmartUserWebUtil.RETRIEVE_NAME_APPID_USEREXISTS_OPERATION)
+	@GlobalApiReponsesGet
+	@GetMapping(SmartUserWebUtil.RETRIEVE_NAME_APPID_USEREXISTS)
+	public ResponseEntity<Boolean> isUserExistByUserNameAndAppId(
+			@PathVariable("userName") @Valid String userName,
+			@PathVariable("appId") @Valid String appId) throws JsonProcessingException {
+		return ResponseEntity.ok().body(smartUserServiceFacade.isUserExist(userName, appId));
+	}
+
 	@Operation(summary = SmartUserWebUtil.RETRIEVE_APPID_USERS_OPERATION)
 	@GlobalApiReponsesGet
 	@GetMapping(SmartUserWebUtil.RETRIEVE_APPID_USERS)
 	public ResponseEntity<List<SmartUserDto>> retrieveByAppId(
 			@PathVariable("appId") @Valid String appId) throws JsonProcessingException {
 		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveByAppId(appId));
+	}
+
+	@Operation(summary = SmartUserWebUtil.RETRIEVE_APPIDS_USERS_OPERATION)
+	@GlobalApiReponsesGet
+	@PostMapping(SmartUserWebUtil.RETRIEVE_APPIDS_USERS)
+	public ResponseEntity<List<SmartUserDto>> retrieveByAppIds(
+			@Parameter(name = "appIds", required = true) @Valid @RequestBody List<String> appIds) throws JsonProcessingException {
+		return ResponseEntity.ok().body(smartUserServiceFacade.retrieveByAppIds(appIds));
 	}
 
 	@Operation(summary = SmartUserWebUtil.UPDATE_USER_OPERATION)
@@ -124,7 +146,7 @@ public class SmartUserController extends CommonController {
 		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
 
 		user.setId(id);
-		user.setProcApprId(appId);
+		user.setProcAppId(appId);
 		user.setProcUserId(userId);
 		user.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
 		if(StringUtils.isNotEmpty(user.getPassword())) {
@@ -150,5 +172,23 @@ public class SmartUserController extends CommonController {
 		smartUserServiceFacade.deleteById(id);
 		return ResponseEntity.ok().body("DELETED");
 	}
-	
+
+	@Operation(summary = SmartUserWebUtil.DELETE_USER_INBULK_OPERATION)
+	@GlobalApiReponsesDelete
+	@PostMapping(SmartUserWebUtil.DELETE_USER_INBULK)
+	public ResponseEntity<String> deleteByIdIn(
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) @ValidAppId String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
+			@Parameter(name = "ids", required = true) @Valid @RequestBody List<String> ids) {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+
+		smartUserServiceFacade.delete(ids);
+		return ResponseEntity.ok().body("DELETED");
+	}
+
 }

@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.smartapps.smartlib.dto.SmartUserDto;
+import com.smartapps.smartuser.jpa.entities.SmartUser;
 
 public class SmartUserDetails implements UserDetails {
 
@@ -22,13 +22,13 @@ public class SmartUserDetails implements UserDetails {
 	public SmartUserDetails() {
 	}
 
-	public SmartUserDetails(SmartUserDto user) {
+	public SmartUserDetails(SmartUser user) {
 		this.userName = user.getName();
 		this.password = user.getPassword();
 		this.authorities = getGrantedAuthorities(user);
 	}
 	
-	private List<GrantedAuthority> getGrantedAuthorities(SmartUserDto user) {
+	private List<GrantedAuthority> getGrantedAuthorities(SmartUser user) {
 		return Arrays.stream(user.getRoles().split(","))
 				.map(SimpleGrantedAuthority::new)
 				.collect(Collectors.toList());

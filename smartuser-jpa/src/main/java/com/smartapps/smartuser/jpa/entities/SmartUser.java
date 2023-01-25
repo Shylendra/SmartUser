@@ -129,6 +129,9 @@ public class SmartUser extends CommonEntity implements Serializable {
 	@Convert(converter = TrimConverter.class)
 	private String linkedInUrl;
 
+	@Column(name = "PRIMARY_ADDRESS_ID")
+	private Integer primaryAddressId;
+
 	@PrePersist
 	public void control() {
 		if (StringUtils.isEmpty(about)) {
@@ -160,6 +163,9 @@ public class SmartUser extends CommonEntity implements Serializable {
 		}
 		if (StringUtils.isEmpty(linkedInUrl)) {
 			linkedInUrl = "https://linkedin.com/#";
+		}
+		if (primaryAddressId == null) {
+			primaryAddressId = 0;
 		}
 	}
 }

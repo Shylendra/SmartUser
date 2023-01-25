@@ -37,6 +37,7 @@ public class SmartWebSecurityConfig extends WebSecurityConfigurerAdapter {
             // -- API public endpoints
             "/smartuser-api/authenticate/**",
             "/smartuser-api/register",
+            "/smartuser-api/user-exists/**",
             // -- Health check
             "/actuator/**",
             // -- Swagger UI v3 (OpenAPI)
