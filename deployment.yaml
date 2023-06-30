@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartuser-api
+  labels:
+    app: smartuser-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartuser-api
+  template:
+    metadata:
+      labels:
+        app: smartuser-api
+    spec:
+      containers:
+        - name: smartuser-api
+          image: shylendra2015/smartuser-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smartuser-api-svc
+spec:
+  ports:
+    - port: 80
+      targetPort: 8081
+      protocol: TCP
+  selector:
+    app: smartuser-api
