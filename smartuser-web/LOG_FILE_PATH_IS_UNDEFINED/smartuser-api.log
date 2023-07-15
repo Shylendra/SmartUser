@@ -34061,3 +34061,1102 @@ com.smartapps.smartlib.exception.UnauthorizedException: Error validating access 
 2023-07-15 20:39:48.045 [main] DEBUG org.hibernate.SQL - select smartuser0_.id as col_0_0_ from smart_user smartuser0_ where smartuser0_.name=? limit ?
 2023-07-15 20:39:48.045 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [user]
 2023-07-15 20:39:48.047 [main] INFO  c.s.smartuser.web.config.SmartDataLoader - User 'user' already exists.
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+#logback.classic pattern: %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} - %msg%n
+2023-07-15 20:56:36.058 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2023-07-15 20:56:36.216 [main] INFO  c.s.smartuser.web.SmartuserApplication - Starting SmartuserApplication using Java 1.8.0_291 on DESKTOP-1C84R2R with PID 22908 (C:\Users\shyle\git\SmartUser\smartuser-web\target\classes started by shyle in C:\Users\shyle\git\SmartUser\smartuser-web)
+2023-07-15 20:56:36.217 [main] INFO  c.s.smartuser.web.SmartuserApplication - No active profile set, falling back to default profiles: default
+2023-07-15 20:56:40.703 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-15 20:56:41.171 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 432 ms. Found 1 JPA repository interfaces.
+2023-07-15 20:56:43.171 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=21efd0c3-ab31-3f39-9c7f-802b32cab4fb
+2023-07-15 20:56:48.622 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-07-15 20:56:48.649 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2023-07-15 20:56:48.650 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-15 20:56:48.651 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-07-15 20:56:49.302 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-15 20:56:49.302 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 12878 ms
+2023-07-15 20:56:54.638 [main] INFO  o.e.s.o.t.o.p.UpfrontAllocatingPageSource - Allocating 100.0MB in chunks
+2023-07-15 20:56:54.830 [main] INFO  org.ehcache.core.EhcacheManager - Cache 'thirty-minute-cache' created in EhcacheManager.
+2023-07-15 20:56:54.989 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2023-07-15 20:56:54.999 [main] INFO  org.ehcache.jsr107.Eh107CacheManager - Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=file./C./Users/shyle/git/SmartUser/smartuser-web/target/classes/ehcache.xml,Cache=thirty-minute-cache
+2023-07-15 20:56:55.184 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-15 20:56:58.538 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-15 20:57:00.048 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-15 20:57:00.625 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+2023-07-15 20:57:01.617 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-15 20:57:02.527 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-07-15 20:57:07.604 [main] INFO  o.h.e.t.j.p.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-15 20:57:07.648 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-15 20:57:09.701 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - Load MainConfig ***
+2023-07-15 20:57:09.711 [main] INFO  com.smartapps.smartuser.web.config.MainConfig - JNDI: null
+2023-07-15 20:57:11.249 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45bbb3e8, org.springframework.security.web.context.SecurityContextPersistenceFilter@2be208db, org.springframework.security.web.header.HeaderWriterFilter@69c263f8, org.springframework.security.web.authentication.logout.LogoutFilter@344acc03, com.smartapps.smartuser.web.security.config.JWTRequestFilter@61ec2cb5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ae90cb9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f97e3de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@795e8ef5, org.springframework.security.web.session.SessionManagementFilter@7a57c5d9, org.springframework.security.web.access.ExceptionTranslationFilter@5183131d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1196537d]
+2023-07-15 20:57:15.004 [main] INFO  o.s.b.a.endpoint.web.EndpointLinksResolver - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-07-15 20:57:16.032 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2023-07-15 20:57:16.149 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-07-15 20:57:16.219 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-07-15 20:57:16.308 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-07-15 20:57:16.321 [main] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-07-15 20:57:16.365 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-07-15 20:57:16.366 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-07-15 20:57:16.366 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-07-15 20:57:16.366 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-07-15 20:57:16.366 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-07-15 20:57:16.366 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-07-15 20:57:16.366 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-07-15 20:57:17.024 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-07-15 20:57:17.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-07-15 20:57:17.031 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-07-15 20:57:17.037 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1689418637037 with initial instances count: 1
+2023-07-15 20:57:17.043 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SMARTUSER with eureka with status UP
+2023-07-15 20:57:17.043 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1689418637043, current=UP, previous=STARTING]
+2023-07-15 20:57:17.045 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_SMARTUSER/DESKTOP-1C84R2R:SmartUser:8081: registering service...
+2023-07-15 20:57:17.051 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2023-07-15 20:57:17.087 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-15 20:57:17.088 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2023-07-15 20:57:17.147 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_SMARTUSER/DESKTOP-1C84R2R:SmartUser:8081 - registration status: 204
+2023-07-15 20:57:17.632 [main] INFO  c.s.smartuser.web.SmartuserApplication - Started SmartuserApplication in 44.65 seconds (JVM running for 47.293)
+2023-07-15 20:57:17.645 [main] INFO  c.s.smartuser.web.config.SmartDataLoader - [*** SMARTUSER-API::SmartDataLoader::run() ***]:
+2023-07-15 20:57:17.663 [main] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::isUserExist() ***]:
+2023-07-15 20:57:17.721 [main] DEBUG org.hibernate.SQL - select smartuser0_.id as col_0_0_ from smart_user smartuser0_ where smartuser0_.name=? limit ?
+2023-07-15 20:57:17.729 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:57:17.746 [main] INFO  c.s.smartuser.web.config.SmartDataLoader - User 'superadmin' already exists.
+2023-07-15 20:57:17.747 [main] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::isUserExist() ***]:
+2023-07-15 20:57:17.747 [main] DEBUG org.hibernate.SQL - select smartuser0_.id as col_0_0_ from smart_user smartuser0_ where smartuser0_.name=? limit ?
+2023-07-15 20:57:17.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [admin]
+2023-07-15 20:57:17.749 [main] INFO  c.s.smartuser.web.config.SmartDataLoader - User 'admin' already exists.
+2023-07-15 20:57:17.751 [main] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::isUserExist() ***]:
+2023-07-15 20:57:17.751 [main] DEBUG org.hibernate.SQL - select smartuser0_.id as col_0_0_ from smart_user smartuser0_ where smartuser0_.name=? limit ?
+2023-07-15 20:57:17.751 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [user]
+2023-07-15 20:57:17.753 [main] INFO  c.s.smartuser.web.config.SmartDataLoader - User 'user' already exists.
+2023-07-15 20:58:01.867 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-15 20:58:01.868 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-07-15 20:58:01.872 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2023-07-15 20:58:02.110 [http-nio-8081-exec-1] ERROR c.s.s.web.security.config.JWTRequestFilter - Error validating access token: Invalid token prefix, token should begin with 'Bearer '
+2023-07-15 20:58:02.110 [http-nio-8081-exec-1] ERROR c.s.s.web.security.config.JWTRequestFilter - UserName is null or context is not null.
+2023-07-15 20:58:02.278 [http-nio-8081-exec-1] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 20:58:02.304 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 20:58:02.307 [http-nio-8081-exec-1] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:58:03.204 [http-nio-8081-exec-1] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 20:58:03.204 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 20:58:03.205 [http-nio-8081-exec-1] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:58:03.210 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select smartuser0_.id as col_0_0_ from smart_user smartuser0_ where smartuser0_.name=? and smartuser0_.proc_app_id=? limit ?
+2023-07-15 20:58:03.211 [http-nio-8081-exec-1] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:58:03.211 [http-nio-8081-exec-1] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [SMART_ADMIN]
+2023-07-15 20:58:10.528 [http-nio-8081-exec-2] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 20:58:10.529 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 20:58:10.531 [http-nio-8081-exec-2] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:58:10.611 [http-nio-8081-exec-2] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() ***]:
+2023-07-15 20:58:10.613 [http-nio-8081-exec-2] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readAll() ***]:
+2023-07-15 20:58:10.619 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ order by smartuser0_.proc_ts desc
+2023-07-15 20:58:10.651 [http-nio-8081-exec-2] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() RESPONSE ***]: 
+ [ {
+  "id" : "SUN001552",
+  "name" : "test",
+  "password" : "$2a$10$zeehpO5SAxzKzFu07rIL3.uYW4dNrHZTDVh/Q0tJbW1GA3ah8XAL6",
+  "roles" : "USER",
+  "firstName" : "tester",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "phone" : "000111222",
+  "email" : "tester@gmail.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : false,
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-06-09 14:48:06.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+}, {
+  "id" : "SUN001402",
+  "name" : "user1",
+  "password" : "$2a$10$xkhI.OVfM5A/E0KRA3lFUO7Y6LUgcY8KlvWre/2uxvULDlbAIpdke",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-16 11:09:10.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.119"
+}, {
+  "id" : "SUN001353",
+  "name" : "admin",
+  "password" : "$2a$10$dGzoDvR11oFp84Kggaq.S.IM03L.EBRt9Lvp0zau1SVgeMJ5SPKDm",
+  "roles" : "ADMIN",
+  "firstName" : "ADMINFirst",
+  "middleName" : "ADMINMiddle",
+  "lastName" : "ADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "admin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "d086a7eb-566a-4092-8b0a-fbb6793be4f7",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001354",
+  "name" : "user",
+  "password" : "$2a$10$wlwZAAXX8XWK.TixkqTpYO7jau3Ev6PHlUyJrzeBVjBc.36eBEG3O",
+  "roles" : "USER",
+  "firstName" : "USERFirst",
+  "middleName" : "USERMiddle",
+  "lastName" : "USERLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "user@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "202c4067-8c8b-45c1-a3b8-f15e58ea1ff6",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001352",
+  "name" : "superadmin",
+  "password" : "$2a$10$gCE10X.lZOKl2unw8PKOh.WVmHlI9IdFLix9dnnjEmyCfhVv85rKm",
+  "roles" : "SUPER_ADMIN",
+  "firstName" : "SUPERADMINFirst",
+  "middleName" : "SUPERADMINMiddle",
+  "lastName" : "SUPERADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2023-02-16",
+  "phone" : "000111222",
+  "email" : "superadmin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "activationToken" : "0e143353-54e5-42e5-966e-9b4af55807f6",
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 23,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:11.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+} ]
+2023-07-15 20:58:53.657 [http-nio-8081-exec-3] ERROR c.s.s.web.security.config.JWTRequestFilter - Error validating access token: Invalid token prefix, token should begin with 'Bearer '
+2023-07-15 20:58:53.657 [http-nio-8081-exec-3] ERROR c.s.s.web.security.config.JWTRequestFilter - UserName is null or context is not null.
+2023-07-15 20:58:53.782 [http-nio-8081-exec-3] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::register() REQUEST ***]: 
+ {
+  "name" : "user1",
+  "password" : "$2a$10$VWj6vzM2UmJbvXGTb5uu6OsA5s41KNGjrPNdLPn5nfCsW2w6UvsPG",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "addresses" : [ ],
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+}
+2023-07-15 20:58:53.782 [http-nio-8081-exec-3] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserNameAndAppId() ***]:
+2023-07-15 20:58:53.784 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=? and smartuser0_.proc_app_id=?
+2023-07-15 20:58:53.784 [http-nio-8081-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [user1]
+2023-07-15 20:58:53.785 [http-nio-8081-exec-3] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [SMART_ADMIN]
+2023-07-15 20:58:53.787 [http-nio-8081-exec-3] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::register() RESPONSE ***]: 
+ User 'user1' with App ID 'SMART_ADMIN'already exists! 
+2023-07-15 20:59:28.173 [http-nio-8081-exec-4] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 20:59:28.174 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 20:59:28.175 [http-nio-8081-exec-4] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:59:28.184 [http-nio-8081-exec-4] INFO  c.s.s.web.controller.AuthenticationController - User context: 
+2023-07-15 20:59:34.237 [http-nio-8081-exec-5] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 20:59:34.237 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 20:59:34.238 [http-nio-8081-exec-5] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:59:34.245 [http-nio-8081-exec-5] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() ***]:
+2023-07-15 20:59:34.245 [http-nio-8081-exec-5] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readAll() ***]:
+2023-07-15 20:59:34.246 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ order by smartuser0_.proc_ts desc
+2023-07-15 20:59:34.263 [http-nio-8081-exec-5] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() RESPONSE ***]: 
+ [ {
+  "id" : "SUN001552",
+  "name" : "test",
+  "password" : "$2a$10$zeehpO5SAxzKzFu07rIL3.uYW4dNrHZTDVh/Q0tJbW1GA3ah8XAL6",
+  "roles" : "USER",
+  "firstName" : "tester",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "phone" : "000111222",
+  "email" : "tester@gmail.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : false,
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-06-09 14:48:06.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+}, {
+  "id" : "SUN001402",
+  "name" : "user1",
+  "password" : "$2a$10$xkhI.OVfM5A/E0KRA3lFUO7Y6LUgcY8KlvWre/2uxvULDlbAIpdke",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-16 11:09:10.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.119"
+}, {
+  "id" : "SUN001353",
+  "name" : "admin",
+  "password" : "$2a$10$dGzoDvR11oFp84Kggaq.S.IM03L.EBRt9Lvp0zau1SVgeMJ5SPKDm",
+  "roles" : "ADMIN",
+  "firstName" : "ADMINFirst",
+  "middleName" : "ADMINMiddle",
+  "lastName" : "ADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "admin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "d086a7eb-566a-4092-8b0a-fbb6793be4f7",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001354",
+  "name" : "user",
+  "password" : "$2a$10$wlwZAAXX8XWK.TixkqTpYO7jau3Ev6PHlUyJrzeBVjBc.36eBEG3O",
+  "roles" : "USER",
+  "firstName" : "USERFirst",
+  "middleName" : "USERMiddle",
+  "lastName" : "USERLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "user@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "202c4067-8c8b-45c1-a3b8-f15e58ea1ff6",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001352",
+  "name" : "superadmin",
+  "password" : "$2a$10$gCE10X.lZOKl2unw8PKOh.WVmHlI9IdFLix9dnnjEmyCfhVv85rKm",
+  "roles" : "SUPER_ADMIN",
+  "firstName" : "SUPERADMINFirst",
+  "middleName" : "SUPERADMINMiddle",
+  "lastName" : "SUPERADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2023-02-16",
+  "phone" : "000111222",
+  "email" : "superadmin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "activationToken" : "0e143353-54e5-42e5-966e-9b4af55807f6",
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 23,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:11.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+} ]
+2023-07-15 20:59:49.374 [http-nio-8081-exec-6] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 20:59:49.375 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 20:59:49.376 [http-nio-8081-exec-6] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 20:59:49.381 [http-nio-8081-exec-6] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() ***]:
+2023-07-15 20:59:49.381 [http-nio-8081-exec-6] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readAll() ***]:
+2023-07-15 20:59:49.381 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ order by smartuser0_.proc_ts desc
+2023-07-15 20:59:49.393 [http-nio-8081-exec-6] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() RESPONSE ***]: 
+ [ {
+  "id" : "SUN001552",
+  "name" : "test",
+  "password" : "$2a$10$zeehpO5SAxzKzFu07rIL3.uYW4dNrHZTDVh/Q0tJbW1GA3ah8XAL6",
+  "roles" : "USER",
+  "firstName" : "tester",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "phone" : "000111222",
+  "email" : "tester@gmail.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : false,
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-06-09 14:48:06.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+}, {
+  "id" : "SUN001402",
+  "name" : "user1",
+  "password" : "$2a$10$xkhI.OVfM5A/E0KRA3lFUO7Y6LUgcY8KlvWre/2uxvULDlbAIpdke",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-16 11:09:10.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.119"
+}, {
+  "id" : "SUN001353",
+  "name" : "admin",
+  "password" : "$2a$10$dGzoDvR11oFp84Kggaq.S.IM03L.EBRt9Lvp0zau1SVgeMJ5SPKDm",
+  "roles" : "ADMIN",
+  "firstName" : "ADMINFirst",
+  "middleName" : "ADMINMiddle",
+  "lastName" : "ADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "admin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "d086a7eb-566a-4092-8b0a-fbb6793be4f7",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001354",
+  "name" : "user",
+  "password" : "$2a$10$wlwZAAXX8XWK.TixkqTpYO7jau3Ev6PHlUyJrzeBVjBc.36eBEG3O",
+  "roles" : "USER",
+  "firstName" : "USERFirst",
+  "middleName" : "USERMiddle",
+  "lastName" : "USERLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "user@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "202c4067-8c8b-45c1-a3b8-f15e58ea1ff6",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001352",
+  "name" : "superadmin",
+  "password" : "$2a$10$gCE10X.lZOKl2unw8PKOh.WVmHlI9IdFLix9dnnjEmyCfhVv85rKm",
+  "roles" : "SUPER_ADMIN",
+  "firstName" : "SUPERADMINFirst",
+  "middleName" : "SUPERADMINMiddle",
+  "lastName" : "SUPERADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2023-02-16",
+  "phone" : "000111222",
+  "email" : "superadmin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "activationToken" : "0e143353-54e5-42e5-966e-9b4af55807f6",
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 23,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:11.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+} ]
+2023-07-15 21:00:00.788 [http-nio-8081-exec-7] ERROR c.s.s.web.security.config.JWTRequestFilter - Error validating access token: Invalid token prefix, token should begin with 'Bearer '
+2023-07-15 21:00:00.788 [http-nio-8081-exec-7] ERROR c.s.s.web.security.config.JWTRequestFilter - UserName is null or context is not null.
+2023-07-15 21:00:00.868 [http-nio-8081-exec-7] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::register() REQUEST ***]: 
+ {
+  "name" : "user7",
+  "password" : "$2a$10$hUwgTFbXO/FhpH57u7rL1e6.M67X7sKV.CW3J01KTe8RCwKIh9vga",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "addresses" : [ ],
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}
+2023-07-15 21:00:00.868 [http-nio-8081-exec-7] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserNameAndAppId() ***]:
+2023-07-15 21:00:00.869 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=? and smartuser0_.proc_app_id=?
+2023-07-15 21:00:00.869 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [user7]
+2023-07-15 21:00:00.869 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [SMART_ADMIN]
+2023-07-15 21:00:00.872 [http-nio-8081-exec-7] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::create() ***]:
+2023-07-15 21:00:00.957 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select next_val as id_val from smartuser_seq for update
+2023-07-15 21:00:01.014 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - update smartuser_seq set next_val= ? where next_val=?
+2023-07-15 21:00:01.134 [http-nio-8081-exec-7] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::register() RESPONSE ***]: 
+ {
+  "id" : "SUN001602",
+  "name" : "user7",
+  "password" : "$2a$10$hUwgTFbXO/FhpH57u7rL1e6.M67X7sKV.CW3J01KTe8RCwKIh9vga",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-07-15 21:00:00.871",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}
+2023-07-15 21:00:01.156 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - insert into smart_user (proc_app_id, proc_ts, proc_user_id, proc_user_ip_address, proc_user_latitude, proc_user_longitude, vers_id, about, activation_token, activation_token_expiry_date, active, company, dob, email, facebook_url, first_name, gender, instagram_url, job, last_name, linkedin_url, middle_name, name, password, phone, primary_address_id, profile_photo_path, roles, twitter_url, user_status, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2023-07-15 21:00:01.158 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [SMART_ADMIN]
+2023-07-15 21:00:01.160 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [2023-07-15 21:00:00.871]
+2023-07-15 21:00:01.164 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - []
+2023-07-15 21:00:01.164 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - [192.168.1.120]
+2023-07-15 21:00:01.164 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [VARCHAR] - []
+2023-07-15 21:00:01.164 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - []
+2023-07-15 21:00:01.165 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [0]
+2023-07-15 21:00:01.165 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [8] as [VARCHAR] - [All about me here...]
+2023-07-15 21:00:01.165 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [9] as [VARCHAR] - []
+2023-07-15 21:00:01.166 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [10] as [DATE] - [null]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [11] as [BOOLEAN] - [false]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [12] as [VARCHAR] - [International Inc Pty Ltd]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [13] as [DATE] - [2022-02-26]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [14] as [VARCHAR] - [test@email.com]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [15] as [VARCHAR] - [https://facebook.com/#]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [16] as [VARCHAR] - [testFN]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [17] as [VARCHAR] - [MALE]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [18] as [VARCHAR] - [https://instagram.com/#]
+2023-07-15 21:00:01.167 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [19] as [VARCHAR] - [Senior Technical Consultant]
+2023-07-15 21:00:01.168 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [20] as [VARCHAR] - [testLN]
+2023-07-15 21:00:01.168 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [21] as [VARCHAR] - [https://linkedin.com/#]
+2023-07-15 21:00:01.168 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [22] as [VARCHAR] - [testMN]
+2023-07-15 21:00:01.168 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [23] as [VARCHAR] - [user7]
+2023-07-15 21:00:01.168 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [24] as [VARCHAR] - [$2a$10$hUwgTFbXO/FhpH57u7rL1e6.M67X7sKV.CW3J01KTe8RCwKIh9vga]
+2023-07-15 21:00:01.168 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [25] as [VARCHAR] - [0417364793]
+2023-07-15 21:00:01.169 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [26] as [INTEGER] - [0]
+2023-07-15 21:00:01.169 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [27] as [VARCHAR] - [testpath/one/two/test.jpg]
+2023-07-15 21:00:01.169 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [28] as [VARCHAR] - [ADMIN,USER]
+2023-07-15 21:00:01.169 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [29] as [VARCHAR] - [https://twitter.com/#]
+2023-07-15 21:00:01.169 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [30] as [VARCHAR] - []
+2023-07-15 21:00:01.169 [http-nio-8081-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [31] as [VARCHAR] - [SUN001602]
+2023-07-15 21:00:12.354 [http-nio-8081-exec-8] ERROR c.s.s.web.security.config.JWTRequestFilter - Error validating access token: Invalid token prefix, token should begin with 'Bearer '
+2023-07-15 21:00:12.355 [http-nio-8081-exec-8] ERROR c.s.s.web.security.config.JWTRequestFilter - UserName is null or context is not null.
+2023-07-15 21:00:12.451 [http-nio-8081-exec-8] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::register() REQUEST ***]: 
+ {
+  "name" : "user77",
+  "password" : "$2a$10$nzDCZbxbQoWV4yBbK78wZu5YAwohP1ig0uv3aXs0CJOXK4rHIHk/u",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "addresses" : [ ],
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}
+2023-07-15 21:00:12.451 [http-nio-8081-exec-8] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserNameAndAppId() ***]:
+2023-07-15 21:00:12.451 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=? and smartuser0_.proc_app_id=?
+2023-07-15 21:00:12.452 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [user77]
+2023-07-15 21:00:12.452 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [SMART_ADMIN]
+2023-07-15 21:00:12.455 [http-nio-8081-exec-8] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::create() ***]:
+2023-07-15 21:00:12.459 [http-nio-8081-exec-8] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::register() RESPONSE ***]: 
+ {
+  "id" : "SUN001603",
+  "name" : "user77",
+  "password" : "$2a$10$nzDCZbxbQoWV4yBbK78wZu5YAwohP1ig0uv3aXs0CJOXK4rHIHk/u",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-07-15 21:00:12.455",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}
+2023-07-15 21:00:12.461 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - insert into smart_user (proc_app_id, proc_ts, proc_user_id, proc_user_ip_address, proc_user_latitude, proc_user_longitude, vers_id, about, activation_token, activation_token_expiry_date, active, company, dob, email, facebook_url, first_name, gender, instagram_url, job, last_name, linkedin_url, middle_name, name, password, phone, primary_address_id, profile_photo_path, roles, twitter_url, user_status, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2023-07-15 21:00:12.462 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [SMART_ADMIN]
+2023-07-15 21:00:12.462 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [2023-07-15 21:00:12.455]
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - []
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - [192.168.1.120]
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [VARCHAR] - []
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - []
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [0]
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [8] as [VARCHAR] - [All about me here...]
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [9] as [VARCHAR] - []
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [10] as [DATE] - [null]
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [11] as [BOOLEAN] - [false]
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [12] as [VARCHAR] - [International Inc Pty Ltd]
+2023-07-15 21:00:12.463 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [13] as [DATE] - [2022-02-26]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [14] as [VARCHAR] - [test@email.com]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [15] as [VARCHAR] - [https://facebook.com/#]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [16] as [VARCHAR] - [testFN]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [17] as [VARCHAR] - [MALE]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [18] as [VARCHAR] - [https://instagram.com/#]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [19] as [VARCHAR] - [Senior Technical Consultant]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [20] as [VARCHAR] - [testLN]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [21] as [VARCHAR] - [https://linkedin.com/#]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [22] as [VARCHAR] - [testMN]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [23] as [VARCHAR] - [user77]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [24] as [VARCHAR] - [$2a$10$nzDCZbxbQoWV4yBbK78wZu5YAwohP1ig0uv3aXs0CJOXK4rHIHk/u]
+2023-07-15 21:00:12.464 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [25] as [VARCHAR] - [0417364793]
+2023-07-15 21:00:12.465 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [26] as [INTEGER] - [0]
+2023-07-15 21:00:12.465 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [27] as [VARCHAR] - [testpath/one/two/test.jpg]
+2023-07-15 21:00:12.465 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [28] as [VARCHAR] - [ADMIN,USER]
+2023-07-15 21:00:12.465 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [29] as [VARCHAR] - [https://twitter.com/#]
+2023-07-15 21:00:12.465 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [30] as [VARCHAR] - []
+2023-07-15 21:00:12.465 [http-nio-8081-exec-8] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [31] as [VARCHAR] - [SUN001603]
+2023-07-15 21:00:18.592 [http-nio-8081-exec-9] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 21:00:18.593 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 21:00:18.595 [http-nio-8081-exec-9] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 21:00:18.603 [http-nio-8081-exec-9] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() ***]:
+2023-07-15 21:00:18.604 [http-nio-8081-exec-9] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readAll() ***]:
+2023-07-15 21:00:18.604 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ order by smartuser0_.proc_ts desc
+2023-07-15 21:00:18.615 [http-nio-8081-exec-9] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() RESPONSE ***]: 
+ [ {
+  "id" : "SUN001603",
+  "name" : "user77",
+  "password" : "$2a$10$nzDCZbxbQoWV4yBbK78wZu5YAwohP1ig0uv3aXs0CJOXK4rHIHk/u",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-07-15 21:00:12.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}, {
+  "id" : "SUN001602",
+  "name" : "user7",
+  "password" : "$2a$10$hUwgTFbXO/FhpH57u7rL1e6.M67X7sKV.CW3J01KTe8RCwKIh9vga",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-07-15 21:00:01.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}, {
+  "id" : "SUN001552",
+  "name" : "test",
+  "password" : "$2a$10$zeehpO5SAxzKzFu07rIL3.uYW4dNrHZTDVh/Q0tJbW1GA3ah8XAL6",
+  "roles" : "USER",
+  "firstName" : "tester",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "phone" : "000111222",
+  "email" : "tester@gmail.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : false,
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-06-09 14:48:06.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+}, {
+  "id" : "SUN001402",
+  "name" : "user1",
+  "password" : "$2a$10$xkhI.OVfM5A/E0KRA3lFUO7Y6LUgcY8KlvWre/2uxvULDlbAIpdke",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-16 11:09:10.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.119"
+}, {
+  "id" : "SUN001353",
+  "name" : "admin",
+  "password" : "$2a$10$dGzoDvR11oFp84Kggaq.S.IM03L.EBRt9Lvp0zau1SVgeMJ5SPKDm",
+  "roles" : "ADMIN",
+  "firstName" : "ADMINFirst",
+  "middleName" : "ADMINMiddle",
+  "lastName" : "ADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "admin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "d086a7eb-566a-4092-8b0a-fbb6793be4f7",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001354",
+  "name" : "user",
+  "password" : "$2a$10$wlwZAAXX8XWK.TixkqTpYO7jau3Ev6PHlUyJrzeBVjBc.36eBEG3O",
+  "roles" : "USER",
+  "firstName" : "USERFirst",
+  "middleName" : "USERMiddle",
+  "lastName" : "USERLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "user@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "202c4067-8c8b-45c1-a3b8-f15e58ea1ff6",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001352",
+  "name" : "superadmin",
+  "password" : "$2a$10$gCE10X.lZOKl2unw8PKOh.WVmHlI9IdFLix9dnnjEmyCfhVv85rKm",
+  "roles" : "SUPER_ADMIN",
+  "firstName" : "SUPERADMINFirst",
+  "middleName" : "SUPERADMINMiddle",
+  "lastName" : "SUPERADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2023-02-16",
+  "phone" : "000111222",
+  "email" : "superadmin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "activationToken" : "0e143353-54e5-42e5-966e-9b4af55807f6",
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 23,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:11.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+} ]
+2023-07-15 21:00:29.730 [http-nio-8081-exec-10] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readByUserName() ***]:
+2023-07-15 21:00:29.731 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ where smartuser0_.name=?
+2023-07-15 21:00:29.734 [http-nio-8081-exec-10] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [superadmin]
+2023-07-15 21:00:29.743 [http-nio-8081-exec-10] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() ***]:
+2023-07-15 21:00:29.743 [http-nio-8081-exec-10] INFO  c.s.s.jpa.service.SmartUserServiceImpl - [*** SMARTUSER-API::SmartUserServiceImpl::readAll() ***]:
+2023-07-15 21:00:29.743 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select smartuser0_.id as id1_0_, smartuser0_.proc_app_id as proc_app2_0_, smartuser0_.proc_ts as proc_ts3_0_, smartuser0_.proc_user_id as proc_use4_0_, smartuser0_.proc_user_ip_address as proc_use5_0_, smartuser0_.proc_user_latitude as proc_use6_0_, smartuser0_.proc_user_longitude as proc_use7_0_, smartuser0_.vers_id as vers_id8_0_, smartuser0_.about as about9_0_, smartuser0_.activation_token as activat10_0_, smartuser0_.activation_token_expiry_date as activat11_0_, smartuser0_.active as active12_0_, smartuser0_.company as company13_0_, smartuser0_.dob as dob14_0_, smartuser0_.email as email15_0_, smartuser0_.facebook_url as faceboo16_0_, smartuser0_.first_name as first_n17_0_, smartuser0_.gender as gender18_0_, smartuser0_.instagram_url as instagr19_0_, smartuser0_.job as job20_0_, smartuser0_.last_name as last_na21_0_, smartuser0_.linkedin_url as linkedi22_0_, smartuser0_.middle_name as middle_23_0_, smartuser0_.name as name24_0_, smartuser0_.password as passwor25_0_, smartuser0_.phone as phone26_0_, smartuser0_.primary_address_id as primary27_0_, smartuser0_.profile_photo_path as profile28_0_, smartuser0_.roles as roles29_0_, smartuser0_.twitter_url as twitter30_0_, smartuser0_.user_status as user_st31_0_ from smart_user smartuser0_ order by smartuser0_.proc_ts desc
+2023-07-15 21:00:29.755 [http-nio-8081-exec-10] INFO  c.s.s.w.s.facade.SmartUserServiceFacadeImpl - [*** SMARTUSER-API::SmartUserServiceFacadeImpl::retrieveAll() RESPONSE ***]: 
+ [ {
+  "id" : "SUN001603",
+  "name" : "user77",
+  "password" : "$2a$10$nzDCZbxbQoWV4yBbK78wZu5YAwohP1ig0uv3aXs0CJOXK4rHIHk/u",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-07-15 21:00:12.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}, {
+  "id" : "SUN001602",
+  "name" : "user7",
+  "password" : "$2a$10$hUwgTFbXO/FhpH57u7rL1e6.M67X7sKV.CW3J01KTe8RCwKIh9vga",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-07-15 21:00:01.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.120"
+}, {
+  "id" : "SUN001552",
+  "name" : "test",
+  "password" : "$2a$10$zeehpO5SAxzKzFu07rIL3.uYW4dNrHZTDVh/Q0tJbW1GA3ah8XAL6",
+  "roles" : "USER",
+  "firstName" : "tester",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "phone" : "000111222",
+  "email" : "tester@gmail.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : false,
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-06-09 14:48:06.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+}, {
+  "id" : "SUN001402",
+  "name" : "user1",
+  "password" : "$2a$10$xkhI.OVfM5A/E0KRA3lFUO7Y6LUgcY8KlvWre/2uxvULDlbAIpdke",
+  "roles" : "ADMIN,USER",
+  "firstName" : "testFN",
+  "middleName" : "testMN",
+  "lastName" : "testLN",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-02-26",
+  "phone" : "0417364793",
+  "email" : "test@email.com",
+  "profilePhotoPath" : "testpath/one/two/test.jpg",
+  "active" : false,
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-16 11:09:10.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserIpAddress" : "192.168.1.119"
+}, {
+  "id" : "SUN001353",
+  "name" : "admin",
+  "password" : "$2a$10$dGzoDvR11oFp84Kggaq.S.IM03L.EBRt9Lvp0zau1SVgeMJ5SPKDm",
+  "roles" : "ADMIN",
+  "firstName" : "ADMINFirst",
+  "middleName" : "ADMINMiddle",
+  "lastName" : "ADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "admin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "d086a7eb-566a-4092-8b0a-fbb6793be4f7",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001354",
+  "name" : "user",
+  "password" : "$2a$10$wlwZAAXX8XWK.TixkqTpYO7jau3Ev6PHlUyJrzeBVjBc.36eBEG3O",
+  "roles" : "USER",
+  "firstName" : "USERFirst",
+  "middleName" : "USERMiddle",
+  "lastName" : "USERLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2022-12-20",
+  "phone" : "000111222",
+  "email" : "user@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "active" : true,
+  "activationToken" : "202c4067-8c8b-45c1-a3b8-f15e58ea1ff6",
+  "userStatus" : "OFFLINE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 0,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:48.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin"
+}, {
+  "id" : "SUN001352",
+  "name" : "superadmin",
+  "password" : "$2a$10$gCE10X.lZOKl2unw8PKOh.WVmHlI9IdFLix9dnnjEmyCfhVv85rKm",
+  "roles" : "SUPER_ADMIN",
+  "firstName" : "SUPERADMINFirst",
+  "middleName" : "SUPERADMINMiddle",
+  "lastName" : "SUPERADMINLast",
+  "about" : "All about me here...",
+  "company" : "International Inc Pty Ltd",
+  "job" : "Senior Technical Consultant",
+  "gender" : "MALE",
+  "dob" : "2023-02-16",
+  "phone" : "000111222",
+  "email" : "superadmin@email.com",
+  "profilePhotoPath" : "assets/img/profile-img2.jpg",
+  "activationToken" : "0e143353-54e5-42e5-966e-9b4af55807f6",
+  "userStatus" : "AVAILABLE",
+  "twitterUrl" : "https://twitter.com/#",
+  "facebookUrl" : "https://facebook.com/#",
+  "instagramUrl" : "https://instagram.com/#",
+  "linkedInUrl" : "https://linkedin.com/#",
+  "primaryAddressId" : 23,
+  "addresses" : [ ],
+  "procTs" : "2023-02-15 19:43:11.0",
+  "procAppId" : "SMART_ADMIN",
+  "procUserId" : "superadmin",
+  "procUserIpAddress" : "0:0:0:0:0:0:0:1"
+} ]
+2023-07-15 21:02:16.382 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-07-15 21:07:16.397 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
