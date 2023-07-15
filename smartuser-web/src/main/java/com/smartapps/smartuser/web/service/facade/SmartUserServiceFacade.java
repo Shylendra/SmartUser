@@ -17,6 +17,7 @@ public interface SmartUserServiceFacade {
 	public List<SmartUserDto> retrieveByAppId(final String appId) throws JsonProcessingException;
 	public List<SmartUserDto> retrieveByAppIds(final List<String> appIds) throws JsonProcessingException;
 	public SmartUserDto update(final SmartUserDto obj) throws JsonProcessingException;
+	public void updateStatus(String id, String appId, String status);
 	public void deleteById(final String id);
 	public void delete(List<String> ids);
 

@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.smartapps.smartlib.dto.SmartUserContextDto;
+import com.smartapps.smartlib.enums.UserStatusEnum;
 import com.smartapps.smartuser.jpa.entities.SmartUser;
 import com.smartapps.smartuser.jpa.service.SmartUserService;
 import com.smartapps.smartuser.web.assembler.SmartUserAssembler;
@@ -32,6 +33,9 @@ public class SmartUserDetailsService implements UserDetailsService {
 		}
 		
 		this.userContext = smartUserAssembler.mapToSmartUserContext(user);
+		
+		/* Update User status */
+		//smartUserService.updateStatus(user, UserStatusEnum.AVAILABLE.getKey());
 		return new SmartUserDetails(user);
 	}
 	

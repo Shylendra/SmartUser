@@ -112,6 +112,17 @@ public class SmartUser extends CommonEntity implements Serializable {
 
 	@Column(name = "ACTIVE")
 	private Boolean active;
+	
+	@Column(name = "ACTIVATION_TOKEN")
+	@Convert(converter = TrimConverter.class)
+	private String activationToken;
+
+	@Column(name = "ACTIVATION_TOKEN_EXPIRY_DATE")
+	private Date activationTokenExpiryDate;
+
+	@Column(name = "USER_STATUS")
+	@Convert(converter = TrimConverter.class)
+	private String userStatus;
 
 	@Column(name = "TWITTER_URL")
 	@Convert(converter = TrimConverter.class)

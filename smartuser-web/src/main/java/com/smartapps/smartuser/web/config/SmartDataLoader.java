@@ -1,5 +1,7 @@
 package com.smartapps.smartuser.web.config;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.smartapps.smartlib.dto.SmartUserDto;
+import com.smartapps.smartlib.enums.UserStatusEnum;
 import com.smartapps.smartlib.service.MessageService;
 import com.smartapps.smartlib.util.SharedMessages;
 import com.smartapps.smartuser.web.service.facade.SmartUserServiceFacade;
@@ -72,6 +75,9 @@ public class SmartDataLoader implements CommandLineRunner {
 				.dob("2022-12-20")
 				.email(name + "@email.com")
 				.active(true)
+				.activationToken(UUID.randomUUID().toString())
+				.activationTokenExpiryDate("9999-99-99")
+				.userStatus(UserStatusEnum.OFFLINE.getKey())
 				.procAppId(APP_ID)
 				.procUserId(ROOTUSER)
 				.build();

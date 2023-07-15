@@ -63,7 +63,7 @@ public class SmartUserController extends CommonController {
 		user.setProcAppId(appId);
 		user.setProcUserId(userId);
 		user.setProcUserIpAddress(SmartHttpUtil.getIpAddress(request));
-		user.setActive(true);
+		user.setActive(false);
 		if(StringUtils.isEmpty(user.getRoles())) {
 			user.setRoles("USER");
 		}
@@ -155,6 +155,25 @@ public class SmartUserController extends CommonController {
 		return ResponseEntity.ok().body(smartUserServiceFacade.update(user));
 	}
 
+	@Operation(summary = SmartUserWebUtil.UPDATE_USER_STATUS_OPERATION)
+	@GlobalApiReponsesPut
+	@PutMapping(SmartUserWebUtil.UPDATE_USER_STATUS)
+	public void updateStatus(
+			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) String appId,
+			@RequestHeader(value = SmartHttpUtil.USER_ID_HEADER, required = true) String userId,
+			@RequestHeader(value = SmartHttpUtil.USER_GROUPS_HEADER, required = false) String userGroups,
+			@PathVariable("id") @Valid String id,
+			@Parameter(name = "status", description = "JSON with request object in and out", required = true) @Valid @RequestBody String status,
+			HttpServletRequest request) 
+			throws JsonProcessingException {
+		
+		/** Logging **/
+		MDC.put(SmartHttpUtil.APP_ID_HEADER, appId);
+		MDC.put(SmartHttpUtil.USER_ID_HEADER, userId);
+		MDC.put(SmartHttpUtil.USER_GROUPS_HEADER, userGroups);
+		smartUserServiceFacade.updateStatus(id, appId, status);
+	}
+	
 	@Operation(summary = SmartUserWebUtil.DELETE_USER_OPERATION)
 	@GlobalApiReponsesDelete
 	@DeleteMapping(SmartUserWebUtil.DELETE_USER)
@@ -174,7 +193,7 @@ public class SmartUserController extends CommonController {
 	}
 
 	@Operation(summary = SmartUserWebUtil.DELETE_USER_INBULK_OPERATION)
-	@GlobalApiReponsesDelete
+	@GlobalApiReponsesPost
 	@PostMapping(SmartUserWebUtil.DELETE_USER_INBULK)
 	public ResponseEntity<String> deleteByIdIn(
 			@RequestHeader(value = SmartHttpUtil.APP_ID_HEADER, required = true) @ValidAppId String appId,

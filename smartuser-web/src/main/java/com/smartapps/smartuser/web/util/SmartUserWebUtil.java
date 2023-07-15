@@ -32,6 +32,9 @@ public class SmartUserWebUtil {
 	public static final String UPDATE_USER_OPERATION = "Update user";
 	public static final String UPDATE_USER = "api/users/{id}";
 	
+	public static final String UPDATE_USER_STATUS_OPERATION = "Update user status";
+	public static final String UPDATE_USER_STATUS = "api/users/{id}/status";
+	
 	public static final String DELETE_USER_OPERATION = "Delete user by id";
 	public static final String DELETE_USER = "api/users/{id}";
 	

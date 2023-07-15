@@ -223,6 +223,16 @@ public class SmartUserServiceFacadeImpl extends CommonServiceFacade implements S
 	}
 
 	@Override
+	public void updateStatus(String id, String appId, String status) {
+		log.info(messageService.getMessage(
+				SharedMessages.LOG001_PREFIX, 
+				new Object[]{
+						this.getClass().getSimpleName(), 
+						new Object(){}.getClass().getEnclosingMethod().getName()}));
+		smartUserService.updateStatus(id, appId, status);
+	}
+
+	@Override
 	public void deleteById(String id) {
 		log.info(messageService.getMessage(
 				SharedMessages.LOG001_PREFIX, 

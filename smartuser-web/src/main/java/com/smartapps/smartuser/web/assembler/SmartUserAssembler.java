@@ -59,6 +59,15 @@ public class SmartUserAssembler {
 			obj.setProfilePhotoPath(entityObj.getProfilePhotoPath());
 		}
 		obj.setActive(entityObj.getActive());
+		if(StringUtils.isNotEmpty(entityObj.getActivationToken())) {
+			obj.setActivationToken(entityObj.getActivationToken());
+		}
+		if(entityObj.getActivationTokenExpiryDate() != null) {
+			obj.setActivationTokenExpiryDate(entityObj.getActivationTokenExpiryDate().toString());
+		}
+		if(StringUtils.isNotEmpty(entityObj.getUserStatus())) {
+			obj.setUserStatus(entityObj.getUserStatus());
+		}
 		if(StringUtils.isNotEmpty(entityObj.getTwitterUrl())) {
 			obj.setTwitterUrl(entityObj.getTwitterUrl());
 		}
@@ -143,6 +152,15 @@ public class SmartUserAssembler {
 			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
 		}
 		entityObj.setActive(obj.getActive());
+		if(StringUtils.isNotEmpty(obj.getActivationToken())) {
+			entityObj.setActivationToken(obj.getActivationToken());
+		}
+		if(entityObj.getActivationTokenExpiryDate() != null) {
+			entityObj.setActivationTokenExpiryDate(obj.getSqlActivationTokenExpiryDate());
+		}
+		if(StringUtils.isNotEmpty(obj.getUserStatus())) {
+			entityObj.setUserStatus(obj.getUserStatus());
+		}
 		if(StringUtils.isNotEmpty(obj.getTwitterUrl())) {
 			entityObj.setTwitterUrl(obj.getTwitterUrl());
 		}
@@ -216,6 +234,15 @@ public class SmartUserAssembler {
 			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
 		}
 		entityObj.setActive(obj.getActive());
+		if(StringUtils.isNotEmpty(obj.getActivationToken())) {
+			entityObj.setActivationToken(obj.getActivationToken());
+		}
+		if(entityObj.getActivationTokenExpiryDate() != null) {
+			entityObj.setActivationTokenExpiryDate(obj.getSqlActivationTokenExpiryDate());
+		}
+		if(StringUtils.isNotEmpty(obj.getUserStatus())) {
+			entityObj.setUserStatus(obj.getUserStatus());
+		}
 		if(StringUtils.isNotEmpty(obj.getTwitterUrl())) {
 			entityObj.setTwitterUrl(obj.getTwitterUrl());
 		}
@@ -298,6 +325,15 @@ public class SmartUserAssembler {
 			entityObj.setProfilePhotoPath(obj.getProfilePhotoPath());
 		}
 		entityObj.setActive(obj.getActive());
+		if(StringUtils.isNotEmpty(obj.getActivationToken())) {
+			entityObj.setActivationToken(obj.getActivationToken());
+		}
+//		if(entityObj.getActivationTokenExpiryDate() != null) {
+//			entityObj.setActivationTokenExpiryDate(obj.getActivationTokenExpiryDate().toString());
+//		}
+		if(StringUtils.isNotEmpty(obj.getUserStatus())) {
+			entityObj.setUserStatus(obj.getUserStatus());
+		}
 		if(StringUtils.isNotEmpty(obj.getTwitterUrl())) {
 			entityObj.setTwitterUrl(obj.getTwitterUrl());
 		}
