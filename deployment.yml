@@ -18,6 +18,7 @@ spec:
         - name: smartuser-api
           image: shylendra2015/smartuser-api:latest
           imagePullPolicy: Always
+          args: ["--spring.profiles.active=dev"]
           ports:
             - containerPort: 8081
 
